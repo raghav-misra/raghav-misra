@@ -65,6 +65,7 @@ nav {
     display: flex;
     flex-direction: column;
     text-align: center;
+    box-shadow: 0px 0px 20px var(--darkest);
 }
 
 nav > * {
