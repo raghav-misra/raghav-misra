@@ -38,8 +38,8 @@
 }
 
 * {
-    scrollbar-color: var(--primary) var(--info);
-    scrollbar-width: thin;
+  scrollbar-color: var(--primary) var(--info);
+  scrollbar-width: thin;
 }
 
 /* Links */

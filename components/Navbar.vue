@@ -3,7 +3,7 @@
         <nav>
            <header>
                 <img class="logo" src="@/assets/logo.png" />
-                <h1 class="subtitle is-3">raghav misra</h1>
+                <h1 class="subtitle is-3">Raghav Misra</h1>
            </header>
 
             <section class="vertical-nav">

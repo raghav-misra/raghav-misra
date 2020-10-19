@@ -1,11 +1,10 @@
 <template>
     <div class="component-skillbar" :data-rating="skill.rating">
         <div class="skill-display" :style="`--skill-percent: ${rating}%;`">
-        </div>
-
-        <div class="caption">
-            {{ skill.name }}
-            <b>{{ rating / 10 }} / 10</b>
+            <div class="caption">
+                {{ skill.name }}
+                <b>{{ rating / 10 }} / 10</b>
+            </div>
         </div>
     </div>
 </template>
@@ -32,42 +31,37 @@ export default {
 
 <style scoped>
 .component-skillbar {
-    position: relative;
-    overflow: hidden;
-    background: var(--info);
+    transition: background 0.25s ease-in-out;
+    margin: 1rem 0;
 }
 
 .skill-display {
     background: var(--primary);
     height: 2.75rem;
-    padding: 0.5rem 1rem;
-    
+    overflow: visible;
+    position: relative;
+    border-radius: 20px;
     width: var(--skill-percent);
-    transition: background 0.25s ease-in-out;
-}
-
-.component-skillbar:hover .skill-display {
-    background: var(--success);
-}
-
-.component-skillbar:hover .caption {
-    transform: skew(-10deg);
+    box-shadow: 0px 0px 25px var(--darkest);
 }
 
 .caption {
     position: absolute;
     left: 1rem;
     top: 0.5rem;
-    color: var(--light);
-    background: var(--dark);
+    color: var(--primary);
+    background: var(--darkest);
     padding: 0.25rem 0.5rem;
     border-radius: 15px;
     width: 15rem;
     font-size: 0.875rem;
+    display: flex;
+    align-items: center;
     transition: transform 0.25s ease-in-out;
+    box-shadow: 0px 0px 10px var(--info);
 }
 
 .caption b {
-    float: right;
+    margin-left: auto;
 }
 </style>

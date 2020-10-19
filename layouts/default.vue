@@ -1,9 +1,11 @@
 <template>
     <main>
+        <MouseEffects />
         <Navbar />
         <Nuxt />
     </main>
 </template>
+
 
 <style>
 html, body, main {

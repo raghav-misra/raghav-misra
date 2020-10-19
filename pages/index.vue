@@ -1,16 +1,19 @@
 <template>
     <section class="component-page">
-        <div>
-            <vue-typed-js :showCursor="false" :strings="['solving problems, one line of code at a time.']">
-                <h1 class="typing title"></h1>
-            </vue-typed-js>
+        <div class="index-heading">
+            <h1 class="typing title">
+                solving problems, 
+                <vue-typed-js :showCursor="false" :strings="['one line of code at a time.']">
+                    <span class="typing" />
+                </vue-typed-js>
+            </h1>
             <NuxtContent :document="mainContent" />
         </div>
 
         <div>
             <h1 class="title">my technical skill set</h1>
             <div class="skills">
-                <SkillBar ref="skills" v-for="(skill, i) in skills" :key="i" :skill="skill" />
+                <SkillBar v-for="(skill, i) in skills" :key="i" :skill="skill" />
             </div>
         </div>
     </section>
@@ -22,16 +25,7 @@ export default {
         const mainContent = await $content("about", "main").fetch();
         return { mainContent };
     },
-    mounted() {
-        const skillDivs = this.$refs.skills.map(s => s.$el);
-        
-        setTimeout(() => skillDivs.map(d => {
-            if ((d.nextSibling && d.nextSibling.dataset.rating !== d.dataset.rating) || !d.nextSibling) {
-                const bar = d.querySelector(".skill-display");
-                bar.style.borderBottomRightRadius = "20px";
-            }
-        }), 1000);
-    },
+
     data() {
         return {
             skills: [
@@ -49,9 +43,7 @@ export default {
 </script>
 
 <style scoped>
-.skills {
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0px 0px 25px var(--darkest);
+.index-heading .typed-element {
+    display: inline;
 }
 </style>
