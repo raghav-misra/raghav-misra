@@ -113,6 +113,19 @@ nav {
     aside {
         padding-bottom: 0;
     }
+
+    header {
+        flex-direction: row;
+    }
+
+    .logo {
+        margin-right: 1rem;
+        width: 3.75rem;
+    }
+
+    header h1 {
+        font-size: 1.75rem !important;
+    }
 }
 
 @media screen and (max-width: 500px) {
