@@ -43,6 +43,6 @@
 }
 
 /* Links */
-a:hover, a:focus {
+a:hover, a:active {
   color: var(--success) !important;
 }
