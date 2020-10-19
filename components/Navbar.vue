@@ -52,16 +52,21 @@ header {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background: var(--darkest);
 }
 
 nav {
+    overflow: hidden;
     height: 100%;
     background: var(--info);
-    padding: 1rem 2rem;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
     text-align: center;
+}
+
+nav > * {
+    padding: 1rem 2rem;
 }
 
 .vertical-nav {

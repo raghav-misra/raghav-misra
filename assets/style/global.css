@@ -6,6 +6,7 @@
   --light: #F4FFF8;
   --success: #53DD6C;
   --warning: #F9DC5C;
+  --darkest: #050914;
 }
 
 *:not(.fab) {
