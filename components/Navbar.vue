@@ -8,16 +8,15 @@
 
             <section class="vertical-nav">
                 <NuxtLink class="nav-item" v-for="(link, i) in links" :to="link.href" :key="i" v-text="link.title" />
-            </section>
-
-            <section class="social-bar">
-                <a class="nav-item" target="_blank" v-for="(social, i) in socials" :key="i" :href="social.href">
-                    <b-icon :pack="social.generic ? 'fas' : 'fab'" :icon="social.icon" />
+                <a class="nav-item" target="_blank" href="https://github.com/raghav-misra/raghav-misra">
+                    View Source <b-icon pack="fas" icon="external-link-alt" />
                 </a>
             </section>
 
-            <section class="vertical-nav float-bottom">
-                <a class="nav-item" target="_blank" href="https://github.com/raghav-misra/raghav-misra">view source</a>
+            <section class="float-bottom vertical-nav social-bar">
+                <a class="nav-item" target="_blank" v-for="(social, i) in socials" :key="i" :href="social.href">
+                    <b-icon :pack="social.generic ? 'fas' : 'fab'" :icon="social.icon" />
+                </a>
             </section>
         </nav>
     </aside>
@@ -28,9 +27,9 @@ export default {
     data() {
         return {
             links: [
-                { title: "about me", href: "/" },
-                { title: "projects", href: "/projects" },
-                { title: "get in touch", href: "/contact" }
+                { title: "About Me", href: "/" },
+                { title: "My Projects", href: "/projects" },
+                { title: "Get in Touch", href: "/contact" }
             ],
             socials: [
                 { icon: "github", href: "https://github.com/raghav-misra" },

@@ -11,7 +11,7 @@
 html, body, main {
     background-color: var(--dark) !important;
     height: 100vh;
-    overflow-y: hidden !important;
+    overflow: hidden !important;
 }
 
 #__layout {

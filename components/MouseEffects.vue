@@ -7,7 +7,7 @@
             transform: scale(${scale});
         `"
 	>
-		<GlobalEvents @mousemove="followMouse" @mouseover="focusEnlarge" @mousedown="clickAnimate" />
+		<GlobalEvents @mousemove="followMouse" @mouseover="focusEnlarge" @click="clickAnimate" />
         <div>
             <div 
                 class="click-effect" 
@@ -37,14 +37,14 @@ export default {
 			setTimeout(() => {
 				this.x = e.pageX;
 				this.y = e.pageY;
-			}, 50);
+			}, 25);
 		},
 		focusEnlarge(e) {
 			const targets = ["A", "BUTTON"];
-			console.log(e.target);
 			if (
 				targets.indexOf(e.target.nodeName) > -1 ||
-				targets.indexOf(e.target.parentNode.nodeName) > -1
+                targets.indexOf(e.target.parentNode.nodeName) > -1 ||
+                targets.indexOf(e.target.parentNode.parentNode.nodeName) > -1
 			) {
 				this.scale = 2;
 				e.target.addEventListener(
@@ -60,13 +60,20 @@ export default {
         },
         clickAnimate(e) {
             this.clickEffect = true;
-            setTimeout(() => this.clickEffect = false, 500);
-        }
+            setTimeout(() => this.clickEffect = false, 300);
+        },
 	},
 };
 </script>
 
 <style scoped>
+* {
+    transition: transform 0.25s ease-in-out,
+        width 0.25s ease-in-out,
+        height 0.25s ease-in-out,
+        opacity 0.25s ease-in-out;
+}
+
 .component-mouse-trail {
     width: 1rem;
     z-index: 100;
@@ -89,9 +96,6 @@ export default {
     width: 0.25rem;
     height: 0.25rem;
     border-radius: 100%;
-    transition: width 0.5s ease-in-out,
-        height 0.5s ease-in-out,
-        opacity 0.25s ease-in-out;
     background-color: rgba(255, 255, 255, 0.048);
 }
 </style>

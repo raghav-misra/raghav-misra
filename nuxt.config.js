@@ -23,6 +23,8 @@ export default {
     "@/assets/style/content.css"
   ],
 
+  pageTransition: "bounce",
+
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
     "@/plugins/buefy.js",   

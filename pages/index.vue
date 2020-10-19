@@ -2,8 +2,8 @@
     <section class="component-page">
         <div class="index-heading">
             <h1 class="typing title">
-                solving problems, 
-                <vue-typed-js :showCursor="false" :strings="['one line of code at a time.']">
+                Solving problems, 
+                <vue-typed-js :strings="['one line of code at a time.']">
                     <span class="typing" />
                 </vue-typed-js>
             </h1>
@@ -11,7 +11,7 @@
         </div>
 
         <div>
-            <h1 class="title">my technical skill set</h1>
+            <h1 class="title">My Technical Skillset</h1>
             <div class="skills">
                 <SkillBar v-for="(skill, i) in skills" :key="i" :skill="skill" />
             </div>
