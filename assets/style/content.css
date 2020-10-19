@@ -1,0 +1,51 @@
+.nuxt-content > * {
+    margin: 2rem 0;
+}
+
+.nuxt-content h1 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.nuxt-content h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.nuxt-content h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.nuxt-content .icon-link {
+    display: none;
+}
+
+.nuxt-content-highlight pre {
+    background: var(--info) !important;
+    border-radius: 10px;
+}
+
+.nuxt-content-highlight pre * {
+    font-size: 1rem !important;
+    vertical-align: top;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: inline;
+    text-shadow: none !important;
+    font-size: 0.875rem !important;
+    font-family: "Fira Code" !important;
+    background: transparent !important;
+}
+
+.nuxt-content-highlight code {
+    color: var(--light);
+}
+
+.token.function, .token.class-name, .token.property, .token.tag, .token.boolean, .token.number, .token.constant, .token.symbol, .token.deleted {
+    color: var(--danger) !important;
+}
+
+.token.selector, .token.attr-name, .token.string, .token.char, .token.builtin, .token.inserted {
+    color: var(--success) !important;
+}
