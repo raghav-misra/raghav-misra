@@ -3,7 +3,7 @@
         <nav>
            <header>
                 <img class="logo" src="@/assets/logo.png" />
-                <h1 class="subtitle is-3">Raghav Misra</h1>
+                <h1 class="subtitle is-3">raghav misra</h1>
            </header>
 
             <section class="vertical-nav">
@@ -12,12 +12,12 @@
 
             <section class="social-bar">
                 <a class="nav-item" target="_blank" v-for="(social, i) in socials" :key="i" :href="social.href">
-                    <b-icon pack="fab" :icon="social.icon" />
+                    <b-icon :pack="social.generic ? 'fas' : 'fab'" :icon="social.icon" />
                 </a>
             </section>
 
             <section class="vertical-nav float-bottom">
-                <a class="nav-item" target="_blank" href="https://github.com/raghav-misra/raghav-misra">View Source</a>
+                <a class="nav-item" target="_blank" href="https://github.com/raghav-misra/raghav-misra">view source</a>
             </section>
         </nav>
     </aside>
@@ -28,13 +28,15 @@ export default {
     data() {
         return {
             links: [
-                { title: "Welcome", href: "/" },
-                { title: "Projects", href: "/projects" },
-                { title: "Get in Touch", href: "/contact" }
+                { title: "about me", href: "/" },
+                { title: "projects", href: "/projects" },
+                { title: "get in touch", href: "/contact" }
             ],
             socials: [
                 { icon: "github", href: "https://github.com/raghav-misra" },
-                { icon: "linkedin", href: "https://linkedin.com/in/raghav--misra" }
+                { icon: "linkedin", href: "https://linkedin.com/in/raghav--misra" },
+                { icon: "gitlab", href: "https://gitlab.com/raghav-misra" },
+                { icon: "envelope", href: "mailto:raghav.m2014@gmail.com", generic: true }
             ]
         };
     }

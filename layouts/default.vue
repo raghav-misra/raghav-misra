@@ -17,7 +17,7 @@ html, body, main {
 }
 
 main {
-    max-width: 65rem;
+    max-width: 75rem;
     display: inline-flex;
 }
 
