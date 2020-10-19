@@ -5,8 +5,6 @@
             <NuxtContent :document="mainContent" />
         </div>
 
-        <hr>
-
         <div>
             <h1 class="title">my technical skill set</h1>
             <SkillBar v-for="(skill, i) in skills" :key="i" :skill="skill" />

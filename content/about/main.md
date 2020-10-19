@@ -9,6 +9,6 @@ On the other side of the stack, I write REST APIs with NodeJS and Express and us
 I enjoy developing applications that have the potential to make a change, and many of my apps solve (and will solve)
 medical or education-related problems.
 
-
-
-
+Feel free to [reach out](/contact) if you'd like, 
+shoot me an email at <a href="mailto:raghav.m2014@gmail.com" target="_blank">raghav.m2014@gmail.com</a>. 
+You can find the majority of my projects on [GitHub](https://github.com/raghav-misra).
