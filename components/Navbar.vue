@@ -1,13 +1,25 @@
 <template>
-    <aside>
-        <header>
-            <img class="logo" src="@/assets/logo.png" />
-            <h1 class="subtitle is-3">Raghav Misra</h1>
+    <aside class="component-navbar">
+        <nav>
+           <header>
+                <img class="logo" src="@/assets/logo.png" />
+                <h1 class="subtitle is-3">Raghav Misra</h1>
+           </header>
 
-            <nav class="links">
+            <section class="vertical-nav">
                 <NuxtLink class="nav-item" v-for="(link, i) in links" :to="link.href" :key="i" v-text="link.title" />
-            </nav>
-        </header>
+            </section>
+
+            <section class="social-bar">
+                <a class="nav-item" target="_blank" v-for="(social, i) in socials" :key="i" :href="social.href">
+                    <b-icon pack="fab" :icon="social.icon" />
+                </a>
+            </section>
+
+            <section class="vertical-nav float-bottom">
+                <a class="nav-item" target="_blank" href="https://github.com/raghav-misra/raghav-misra">View Source</a>
+            </section>
+        </nav>
     </aside>
 </template>
 
@@ -19,6 +31,10 @@ export default {
                 { title: "Welcome", href: "/" },
                 { title: "Projects", href: "/projects" },
                 { title: "Get in Touch", href: "/contact" }
+            ],
+            socials: [
+                { icon: "github", href: "https://github.com/raghav-misra" },
+                { icon: "linkedin", href: "https://linkedin.com/in/raghav--misra" }
             ]
         };
     }
@@ -31,17 +47,34 @@ aside {
 }
 
 header {
-    height: 100%;
-    background: var(--info);
-    padding: 1rem;
-    border-radius: 15px;
-    text-align: center;
-    min-width: 15rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 nav {
+    height: 100%;
+    background: var(--info);
+    padding: 1rem 2rem;
+    border-radius: 15px;
     display: flex;
     flex-direction: column;
+    text-align: center;
+}
+
+.vertical-nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.social-bar {
+    margin: 1rem;    
+}
+
+.social-bar .nav-item {
+    margin: 1rem;
 }
 
 .nav-item {
@@ -55,14 +88,22 @@ nav {
     color: var(--primary);
 }
 
+.float-bottom {
+    margin-top: auto;
+}
+
 .logo {
     width: 5rem;
 }
 
 @media screen and (max-width: 800px) {
-    nav {
-        flex-direction: row;
-        justify-content: center;
+    .vertical-nav {
+        display: block;
+        text-align: center;
+    }
+
+    .float-bottom {
+        display: none;
     }
 
     .nav-item {
@@ -71,6 +112,21 @@ nav {
 
     aside {
         padding-bottom: 0;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .component-navbar {
+        margin: 0;
+        padding: 0;
+    }
+
+    .vertical-nav .nav-item {
+        display: block;
+    }
+
+    nav {
+        border-radius: 0 0 30px 30px;
     }
 }
 </style>

@@ -34,4 +34,12 @@ main {
     padding-right: 2rem;
     overflow-y: scroll;
 }
+
+@media screen and (max-width: 500px) {
+    .component-page {
+        margin: 0;
+        margin-top: 1rem;
+        padding: 0 1.5rem;
+    }
+}
 </style>
