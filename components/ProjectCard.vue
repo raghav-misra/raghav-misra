@@ -49,7 +49,20 @@
 
 <script>
 export default {
-    props: { project: Object }
+    props: { project: Object },
+    data() {
+		return {
+			cardScale: 0
+		};
+	},
+	mounted() {
+		const increaseScale = () => {
+			this.cardScale += 1;
+			if (this.cardScale !== 100) setTimeout(increaseScale, 2.5);
+		};
+
+		increaseScale();
+	}
 };
 </script>
 
