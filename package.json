@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@nuxt/content": "^1.10.0",
+    "axios": "^0.20.0",
     "buefy": "^0.9.3",
     "bulma": "^0.9.1",
     "core-js": "^3.6.5",
