@@ -1,7 +1,6 @@
 # Hey, I'm Raghav Misra!
 
 ### *Fullstack Web Developer — Highschool Sophomore*
-
 <br>
 
 <a href="https://rm.obliviontech.dev"><img src="https://img.shields.io/badge/portfolio-rm.obliviontech.dev-blue?style=for-the-badge&logo=google%20chrome&logoColor=lightblue"></a>
