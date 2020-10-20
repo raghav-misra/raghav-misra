@@ -114,7 +114,9 @@ export default {
 		margin-left: 0;
 		margin-bottom: 1rem;
 	}
+}
 
+@media screen and (max-width: 768px) and (min-width: 480px) {
 	.vertical-button-group .button {
 		display: inline-block;
 		border-radius: 0;
