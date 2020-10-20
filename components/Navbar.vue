@@ -87,7 +87,7 @@ nav > * {
     transition: transform 0.25s ease-in-out;
 }
 
-.nav-item:hover, .nav-item:focus {
+.nav-item:hover, .nav-item:active {
     transform: scale(1.125);
     color: var(--primary);
 }
