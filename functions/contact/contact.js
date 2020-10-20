@@ -1,4 +1,3 @@
-const sendMail = require("sendmail");
 const axios = require("axios").default;
 
 exports.handler = async (event) => {
