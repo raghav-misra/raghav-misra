@@ -8,9 +8,6 @@
 
             <section class="vertical-nav">
                 <NuxtLink class="nav-item" v-for="(link, i) in links" :to="link.href" :key="i" v-text="link.title" />
-                <a class="nav-item" target="_blank" href="https://github.com/raghav-misra/raghav-misra">
-                    View Source <b-icon pack="fas" icon="external-link-alt" />
-                </a>
             </section>
 
             <section class="float-bottom vertical-nav social-bar">
@@ -109,10 +106,6 @@ nav > * {
         text-align: center;
     }
 
-    .float-bottom {
-        display: none;
-    }
-
     .nav-item {
         margin: 0 1rem;
     }
@@ -141,7 +134,7 @@ nav > * {
         padding: 0;
     }
 
-    .vertical-nav .nav-item {
+    .vertical-nav:not(.social-bar) .nav-item {
         display: block;
     }
 

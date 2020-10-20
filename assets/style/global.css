@@ -43,24 +43,24 @@
 }
 
 /* Links */
-a:hover, a:active {
+a:not(.button):hover, a:not(.button):active {
   color: var(--success) !important;
 }
 
 /* page transition */
-.bounce-enter-active {
-  animation: bounce-in .8s;
+.bounce-enter-active, main {
+  animation: bounce-in 0.75s;
 }
 .bounce-leave-active {
-  animation: bounce-out .5s;
+  animation: bounce-out 0.75s;
 }
 @keyframes bounce-in {
-  0% { transform: scale(0.5); opacity: 0; }
-  50% { transform: scale(1.125); }
+  0% { transform: scale(0.9); opacity: 0; }
+  50% { transform: scale(1.1); }
   100% { transform: scale(1); opacity: 1; }
 }
 @keyframes bounce-out {
   0% { transform: scale(1); opacity: 1;  }
-  50% { transform: scale(1.125) }
-  100% { transform: scale(0.5); opacity: 0; }
+  50% { transform: scale(1.1) }
+  100% { transform: scale(0.9); opacity: 0; }
 }

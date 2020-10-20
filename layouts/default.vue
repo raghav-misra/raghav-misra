@@ -19,8 +19,14 @@ html, body, main {
 }
 
 main {
-    max-width: 75rem;
+    width: 75rem;
     display: inline-flex;
+}
+
+@media screen and (max-width: 75rem){
+    main {
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 800px) {
