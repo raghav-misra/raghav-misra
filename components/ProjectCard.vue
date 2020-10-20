@@ -53,7 +53,7 @@
 			</div>
 		</div>
 
-		<b-taglist class="tag-container">
+		<b-taglist class="tag-container" attached>
 			<b-tag
 				v-for="(tag, tagIndex) in project.tech"
 				:key="tagIndex"
@@ -105,7 +105,7 @@ export default {
 .project-buttons {
 	display: flex;
 	align-items: center;
-	margin-left: 1rem;
+	margin: 0 1rem;
 }
 
 .vertical-button-group {

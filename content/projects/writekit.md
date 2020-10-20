@@ -1,9 +1,7 @@
 ---
 name: WriteKit
 tech:
-    -   text: Vue
-        type: success 
-    -   text: Nuxt
+    -   text: Vue + Nuxt
         type: success
     -   text: Bulma
         type: primary
