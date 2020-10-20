@@ -1,7 +1,6 @@
 <template>
 	<div
 		class="section project-card"
-		:style="`transform: scaleX(${cardScale / 100});`"
 	>
 		<div class="columns">
 			<div class="column">
@@ -73,18 +72,24 @@ export default {
 			cardScale: 0,
 		};
 	},
-	mounted() {
-		const increaseScale = () => {
-			this.cardScale += 1;
-			if (this.cardScale !== 100) setTimeout(increaseScale, 2.5);
-		};
+	// mounted() {
+	// 	const increaseScale = () => {
+	// 		this.cardScale += 1;
+	// 		if (this.cardScale !== 100) setTimeout(increaseScale, 2.5);
+	// 	};
 
-		increaseScale();
-	},
+	// 	increaseScale();
+	// },
 };
 </script>
 
 <style scoped>
+
+@keyframes cardEnter {
+	0% { transform: scaleX(0) translateX(-50%); }
+	100% { transform: none; }
+}
+
 .project-title {
 	display: flex;
 	align-items: center;
@@ -105,6 +110,7 @@ export default {
 	border-radius: 25px;
 	box-shadow: 0px 0px 20px var(--darkest);
 	overflow: hidden;
+	animation: cardEnter 0.5s ease-in-out;
 }
 
 .project-buttons {

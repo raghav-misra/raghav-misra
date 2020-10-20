@@ -1,12 +1,15 @@
 <template>
     <section class="component-page">
         <div class="index-heading">
-            <h1 class="typing title">
-                Solving problems, 
-                <vue-typed-js :strings="['one line of code at a time.']">
-                    <span class="typing" />
+            <h1 class="typing title is-2">
+                Solving problems,<br>
+                <vue-typed-js :strings="['one line of code at a time']">
+                    <code class="title is-4">
+                        <span class="typing"></span>
+                    </code>
                 </vue-typed-js>
             </h1>
+            
             <NuxtContent :document="mainContent" />
         </div>
 
@@ -45,5 +48,18 @@ export default {
 <style scoped>
 .index-heading .typed-element {
     display: inline;
+}
+
+code.title {
+    display: inline-block;
+    color: var(--primary);
+    margin-top: 0.5rem;
+    border-radius: 10px;
+    background: none;
+    padding: 0;
+}
+
+code.title * {
+    font-family: "Fira Code", monospace !important;
 }
 </style>

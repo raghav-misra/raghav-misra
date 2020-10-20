@@ -1,9 +1,9 @@
 <template>
-    <div class="component-skillbar" :data-rating="skill.rating">
-        <div class="skill-display" :style="`--skill-percent: ${rating}%;`">
+    <div class="component-skillbar">
+        <div class="skill-display" :style="`--skill-percent: ${skill.rating * 10}%;`">
             <div class="caption">
                 {{ skill.name }}
-                <b>{{ rating / 10 }} / 10</b>
+                <b>{{ skill.rating }} / 10</b>
             </div>
         </div>
     </div>
@@ -11,25 +11,16 @@
 
 <script>
 export default {
-    props: { skill: Object },
-    data() {
-        return { rating: 0 };
-    },
-    mounted() {
-        const fillBarInterval = () => {
-            this.rating += 1;
-
-            if (this.rating !== (this.skill.rating * 10)) {
-                setTimeout(fillBarInterval, 10);
-            }
-        };
-
-        fillBarInterval();
-    }
+    props: { skill: Object }
 }
 </script>
 
 <style scoped>
+@keyframes showProgress {
+    from { width: 0; }
+    to { width: var(--skill-percent); }
+}
+
 .component-skillbar {
     transition: background 0.25s ease-in-out;
     margin: 1rem 0;
@@ -42,6 +33,7 @@ export default {
     position: relative;
     border-radius: 20px;
     width: var(--skill-percent);
+    animation: showProgress 0.75s ease-in-out;
     box-shadow: 0px 0px 25px var(--darkest);
 }
 
