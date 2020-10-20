@@ -7,7 +7,7 @@
 			<div class="column">
 				<div>
 					<h1 class="title">
-						<div class="level level-left">
+						<div class="level level-left project-title">
 							{{ project.name }}
 
 							<b-taglist
@@ -85,6 +85,11 @@ export default {
 </script>
 
 <style scoped>
+.project-title {
+	display: flex;
+	align-items: center;
+}
+
 .winner-tag {
     display: inline-flex;
     margin-left: 1rem;
@@ -136,6 +141,17 @@ export default {
 		text-align: left;
 		margin-left: 0;
 		margin-bottom: 1rem;
+	}
+}
+
+@media screen and (max-width: 990px) {
+	.project-title {
+		flex-direction: column;
+		align-items: baseline;
+	}
+	.winner-tag {
+		margin-left: 0;
+		margin-top: 0.5rem;
 	}
 }
 
