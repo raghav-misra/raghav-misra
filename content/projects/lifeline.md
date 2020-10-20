@@ -21,7 +21,6 @@ buttons:
         href: https://gitlab.com/amadoruavs-hackthecloud2020
         type: is-primary
         icon: fab fa-gitlab
-winner: false
 date: 07/13/2020   
 ---
 

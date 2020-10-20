@@ -7,10 +7,28 @@
 			<div class="column">
 				<div>
 					<h1 class="title">
-						{{ project.name }}<br />
-						<b class="title is-6 has-text-warning">{{
-							project.date
-						}}</b>
+						<div class="level level-left">
+							{{ project.name }}
+
+							<b-taglist
+								v-if="project.winner"
+								attached
+								class="winner-tag"
+							>
+								<b-tag type="is-warning">Winner!</b-tag>
+								<b-tag type="is-danger">
+									<b-icon
+										pack="fas"
+										icon="medal"
+										type="is-light"
+									/>
+								</b-tag>
+							</b-taglist>
+						</div>
+
+						<b class="title is-6 has-text-warning">
+							{{ project.date }}
+						</b>
 					</h1>
 
 					<NuxtContent :document="project" />
@@ -49,10 +67,10 @@
 
 <script>
 export default {
-    props: { project: Object },
-    data() {
+	props: { project: Object },
+	data() {
 		return {
-			cardScale: 0
+			cardScale: 0,
 		};
 	},
 	mounted() {
@@ -62,11 +80,20 @@ export default {
 		};
 
 		increaseScale();
-	}
+	},
 };
 </script>
 
 <style scoped>
+.winner-tag {
+    display: inline-flex;
+    margin-left: 1rem;
+}
+
+.winner-tag > * {
+	font-size: 1.125rem;
+}
+
 .project-card {
 	background: var(--info);
 	margin: 2rem 1rem;
