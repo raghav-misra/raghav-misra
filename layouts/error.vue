@@ -8,7 +8,10 @@
             You've hit a roadblock, my friend.
         </h1>
 
-        <NuxtLink to="/" class="subtitle is-3">Let's go home.</NuxtLink>
+        <div>
+            <b-button tag="nuxt-link" to="/" class="redirect subtitle is-3" type="is-danger">Let's go home.</b-button>
+            <NuxtLink :to="reportMissingPage" class="subtitle is-5">Report a broken link.</NuxtLink>
+        </div>
     </div>
 </template>
 
@@ -20,25 +23,46 @@
     justify-content: center
 }
 
-a {
-    color: var(--primary);
-}
-
 .error-text {
-    display: inline-block;
     font-size: 6rem;
     color: var(--danger);
     border-bottom: 5px solid var(--danger);
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     text-shadow: 0.25rem 0.25rem var(--warning);
+}
+
+.redirect {
+    border-top: 5px solid var(--danger);
+    color: var(--warning);
+    padding-top: 1rem;
+}
+
+a.subtitle:not(.redirect) {
+    color: var(--primary);
+}
+
+.error-text, .redirect {
+    display: block;
+    width: 20rem;
 }
 </style>
 
 <script>
+import qs from "qs";
+
 export default {
     data() {
         return {
             showPage: false
+        }
+    },
+
+    computed: {
+        reportMissingPage() {
+            return `/contact/?${qs.stringify({
+                subject: "Missing page.",
+                body: `The page ${this.$route.path} does not exist.`
+            })}`;
         }
     },
 

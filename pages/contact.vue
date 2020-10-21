@@ -56,6 +56,7 @@
 
 <script>
 import axios from "axios";
+import qs from "qs";
 
 export default {
 	data() {
@@ -74,6 +75,18 @@ export default {
                 { icon: "envelope", href: "mailto:raghav.m2014@gmail.com", generic: true }
             ]
 		};
+	},
+
+	mounted() {
+		const data = qs.parse(location.search.replace("?", ""));
+		if (data) {
+			for (const key in data) {
+				console.log(key);
+				if (key in this.fields) {
+					this.fields[key] = data[key];
+				}
+			}
+		}
 	},
 
 	methods: {
@@ -131,6 +144,11 @@ export default {
 			}
 		},
 	},
+	head() {
+        return {
+            title: "Raghav Misra — Contact"
+        };
+    }
 };
 </script>
 

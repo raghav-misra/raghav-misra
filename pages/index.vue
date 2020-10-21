@@ -41,6 +41,11 @@ export default {
                 { name: "Python3 + Flask", rating: 8.5 }
             ]
         };
+    },
+    head() {
+        return {
+            title: "Raghav Misra — About"
+        };
     }
 };
 </script>

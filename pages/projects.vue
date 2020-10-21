@@ -28,6 +28,11 @@ export default {
 		scrollToTop() {
 			document.querySelector(".component-page").scrollTop = 0;
 		}
-	}
+	},
+	head() {
+        return {
+            title: "Raghav Misra — Projects"
+        };
+    }
 };
 </script>

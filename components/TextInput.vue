@@ -2,16 +2,16 @@
     <div class="component-text-input">
         <label v-if="label" v-text="label" />
         <textarea 
-            v-if="multiline" 
-            v-model="value" 
-            @input="emitInput"
+            v-if="multiline"
+            :value="value"
+            @input="updateValue($event.target.value)"
             :placeholder="placeholder"
             :required="required"
         />  
         <input 
             v-else 
-            v-model="value"
-            @input="emitInput"
+            @input="updateValue($event.target.value)"
+            :value="value"
             :placeholder="placeholder" 
             :type="type"
             :required="required"
@@ -22,7 +22,7 @@
 <script>
 export default {
     props: {
-        initialValue: {
+        value: {
             type: String,
             default: ""
         },
@@ -46,11 +46,10 @@ export default {
             default: false
         }
     },
-    data() {
-        return { value: this.initialValue }
-    },
     methods: {
-        emitInput() { this.$emit("input", this.value); }
+        updateValue(value) { 
+            this.$emit("input", value); 
+        }
     }
 };
 </script>
