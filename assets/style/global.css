@@ -5,6 +5,7 @@
   --dark: #0B132B;
   --light: #F4FFF8;
   --success: #53DD6C;
+  --success-dark: #2b7238;
   --warning: #F9DC5C;
   --darkest: #050914;
   --placeholder: #505974;
@@ -44,6 +45,10 @@
 }
 
 /* Links */
+a:not(.button) {
+  transition: 0.25s color ease-in-out;
+}
+
 a:not(.button):hover, a:not(.button):active {
   color: var(--success) !important;
 }

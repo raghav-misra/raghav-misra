@@ -135,11 +135,16 @@ nav > * {
     }
 
     .vertical-nav:not(.social-bar) .nav-item {
-        display: block;
+        display: inline-block;
+        margin: 0 0.5rem;
     }
 
     nav {
         border-radius: 0 0 30px 30px;
+    }
+    
+    .social-bar {
+        display: none;
     }
 }
 </style>
