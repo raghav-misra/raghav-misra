@@ -41,6 +41,7 @@ main {
     margin: 2rem;
     padding-right: 2rem;
     overflow-y: scroll;
+    scroll-behavior: smooth;
 }
 
 @media screen and (max-width: 500px) {

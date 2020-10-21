@@ -137,7 +137,7 @@ export default {
 
 .socials-list {
 	position: relative;
-	animation: socialBar 1s ease-in-out 0.25s;
+	animation: socialBar 1s ease-in-out;
     display: flex;
     flex-direction: column;
     justify-content: center;

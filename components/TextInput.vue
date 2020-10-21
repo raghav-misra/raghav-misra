@@ -71,6 +71,10 @@ textarea, input {
     font-size: 1rem;
 }
 
+textarea {
+    resize: vertical;
+}
+
 label {
     display: block;
     font-size: 1.125rem;

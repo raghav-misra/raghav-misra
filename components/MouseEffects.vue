@@ -40,23 +40,27 @@ export default {
 			}, 25);
 		},
 		focusEnlarge(e) {
-			const targets = ["A", "BUTTON"];
-			if (
-				targets.indexOf(e.target.nodeName) > -1 ||
-                targets.indexOf(e.target.parentNode.nodeName) > -1 ||
-                targets.indexOf(e.target.parentNode.parentNode.nodeName) > -1
-			) {
-				this.scale = 2;
-				e.target.addEventListener(
-					"mouseout",
-					() => {
-						this.scale = 1;
-					},
-					{
-						once: true,
-					}
-				);
-			}
+			try {
+                const targets = ["A", "BUTTON"];
+                if (
+                    targets.indexOf(e.target.nodeName) > -1 ||
+                    targets.indexOf(e.target.parentNode.nodeName) > -1 ||
+                    targets.indexOf(e.target.parentNode.parentNode.nodeName) > -1
+                ) {
+                    this.scale = 2;
+                    e.target.addEventListener(
+                        "mouseout",
+                        () => {
+                            this.scale = 1;
+                        },
+                        {
+                            once: true,
+                        }
+                    );
+                }
+            }
+
+            catch (e) {}
         },
         clickAnimate(e) {
             this.clickEffect = true;

@@ -1,12 +1,17 @@
 <template>
-	<section class="component-page">
+	<section id="projects" class="component-page">
 		<h1 class="title is-2">My Projects</h1>
 
-		<ProjectCard 
+		<ProjectCard
 			v-for="project in projects"
 			:key="Number(project.date.split('/').join(''))"
 			:project="project"
 		/>
+
+		<div class="end-card">
+			<h1 class="subtitle is-4">You've reached the beginning...</h1>
+			<b-button type="is-warning" @click="scrollToTop">Go back up?</b-button>
+		</div>
 	</section>
 </template>
 
@@ -19,5 +24,10 @@ export default {
 
 		return { projects };
 	},
+	methods: {
+		scrollToTop() {
+			document.querySelector(".component-page").scrollTop = 0;
+		}
+	}
 };
 </script>
