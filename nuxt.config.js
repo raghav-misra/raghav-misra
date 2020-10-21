@@ -19,6 +19,7 @@ export default {
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
+    "@/assets/style/layout.css",
     "@/assets/style/global.css",
     "@/assets/style/content.css"
   ],

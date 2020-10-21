@@ -55,7 +55,7 @@
 </template>
 
 <script>
-import { SnackbarProgrammatic as Snackbar } from "buefy";
+import axios from "axios";
 
 export default {
 	data() {
@@ -77,7 +77,7 @@ export default {
 	},
 
 	methods: {
-		formSubmit() {
+		async formSubmit() {
 			let failed = false;
 			let message = "";
 
@@ -86,18 +86,48 @@ export default {
 					this.fields[field] = "";
 					failed = true;
 					message = "Make sure all your fields are filled.";
-					break;
 				}
 			}
 
 			if (failed) {
-				Snackbar.open({
+				return this.$buefy.snackbar.open({
 					message: message,
 					type: "is-warning",
 					position: "is-top",
 					actionText: "Close",
 				});
-				return;
+			}
+
+			// Success (data is valid):
+			try {
+				const result = await axios.post("/.netlify/functions/contact", this.fields);
+
+				if (result.data.success) {
+					this.$buefy.snackbar.open({
+						message: "Your contact request has been sent!",
+						type: "is-success",
+						position: "is-top",
+						actionText: "Okay",
+					});
+				}
+				else {
+					this.$buefy.snackbar.open({
+						message: "Something messed up. Try reloading.",
+						type: "is-danger",
+						position: "is-top",
+						actionText: "Okay",
+					});
+				}
+			}
+			catch (error) {
+				console.log("Contact form submit failed:", error);
+
+				this.$buefy.snackbar.open({
+					message: "Something messed up. Try reloading.",
+					type: "is-danger",
+					position: "is-top",
+					actionText: "Okay",
+				});
 			}
 		},
 	},

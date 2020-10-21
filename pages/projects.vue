@@ -10,7 +10,7 @@
 
 		<div class="end-card">
 			<h1 class="subtitle is-4">You've reached the beginning...</h1>
-			<b-button type="is-warning" @click="scrollToTop">Go back up?</b-button>
+			<b-button type="is-warning" @click="scrollToTop"><b>Go back up?</b></b-button>
 		</div>
 	</section>
 </template>
