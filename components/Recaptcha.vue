@@ -18,11 +18,9 @@
 <script>
 export default {
     props: ["siteKey"],
-    mounted() {
-        window[`recaptcha_${this.siteKey}`] = () => this.$emit("recaptchaSuccess");
-    },
     methods: {
         validate() {
+            window[`recaptcha_${this.siteKey}`] = () => this.$emit("recaptchaSuccess");
             grecaptcha.execute();
         }
     }
