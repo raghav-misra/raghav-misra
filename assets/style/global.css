@@ -91,3 +91,8 @@ main {
   background: var(--info) !important;
   color: var(--light);
 }
+
+/* */
+div.grecaptcha-badge {
+  display: none !important;
+}

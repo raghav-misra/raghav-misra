@@ -1,8 +1,17 @@
 <template>
-    <div class="g-recaptcha"
-        :data-sitekey="siteKey"
-        :data-callback="`recaptcha_${siteKey}`"
-        data-size="invisible">
+    <div>
+        <div class="g-recaptcha"
+            :data-sitekey="siteKey"
+            :data-callback="`recaptcha_${siteKey}`"
+            data-size="invisible">
+        </div>
+
+        <small class="recaptcha-credit">
+            This form is protected by <b>Recaptcha:</b>
+            <a href="https://policies.google.com/privacy?hl=en">Privacy</a>
+            —
+            <a href="https://policies.google.com/terms?hl=en">Terms</a>
+        </small>
     </div>
 </template>
 
@@ -19,3 +28,9 @@ export default {
     }
 }
 </script>
+
+<style>
+.recaptcha-credit a:first-of-type {
+    margin-left: 0.25rem;
+}
+</style>

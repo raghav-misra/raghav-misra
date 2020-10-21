@@ -4,7 +4,7 @@ export default {
 
     // Global page headers (https://go.nuxtjs.dev/config-head)
     head: {
-        title: "Raghav Misra - Portfolio",
+        title: "Raghav Misra — Portfolio",
         meta: [{
                 charset: "utf-8"
             },
