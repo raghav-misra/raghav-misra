@@ -94,5 +94,5 @@ main {
 
 /* */
 div.grecaptcha-badge {
-  display: none !important;
+  visibility: hidden !important;
 }
