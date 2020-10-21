@@ -76,7 +76,7 @@ export default {
 
 .component-mouse-trail {
     width: 1rem;
-    z-index: 100;
+    z-index: 10000;
     pointer-events: none;
     height: 1rem;
     border: 0.25rem solid var(--light);

@@ -33,7 +33,7 @@ export default {
     position: relative;
     border-radius: 20px;
     width: var(--skill-percent);
-    animation: showProgress 0.75s ease-in-out;
+    animation: showProgress 0.75s ease-in-out 0.25s;
     box-shadow: 0px 0px 25px var(--darkest);
 }
 

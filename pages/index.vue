@@ -1,7 +1,7 @@
 <template>
     <section class="component-page">
         <div class="index-heading">
-            <h1 class="typing title is-2">
+            <h1 class="title is-2">
                 Solving problems,<br>
                 <vue-typed-js :strings="['one line of code at a time']">
                     <code class="title is-4">

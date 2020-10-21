@@ -7,6 +7,7 @@
   --success: #53DD6C;
   --warning: #F9DC5C;
   --darkest: #050914;
+  --placeholder: #505974;
 }
 
 /* Font */
@@ -63,4 +64,15 @@ a:not(.button):hover, a:not(.button):active {
   0% { transform: scale(1); opacity: 1;  }
   50% { transform: scale(1.1) }
   100% { transform: scale(0.9); opacity: 0; }
+}
+
+/* Snakbar */
+.notices .snackbar {
+  margin: 0.5em 0;
+  align-items: center;
+  box-shadow: 0px 0px 20px var(--darkest);
+  border-radius: 4px;
+  pointer-events: auto;
+  background: var(--info) !important;
+  color: var(--light);
 }
