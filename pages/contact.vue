@@ -243,7 +243,7 @@ form {
 	margin: 1rem 0 !important;
 }
 
-@media screen and (max-width: 875px) {
+@media screen and (max-width: 1000px) {
 	.contact-form {
 		flex-direction: column-reverse;
 	}

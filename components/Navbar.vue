@@ -100,7 +100,7 @@ nav > * {
     width: 5rem;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 850px) {
     .vertical-nav {
         display: block;
         text-align: center;

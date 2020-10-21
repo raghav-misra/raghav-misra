@@ -7,7 +7,7 @@
         </div>
 
         <small class="recaptcha-credit">
-            This form is protected by <b>Recaptcha:</b>
+            <span class="text-hide-mobile">This form is protected by</span> <b>Recaptcha:</b>
             <a href="https://policies.google.com/privacy?hl=en">Privacy</a>
             —
             <a href="https://policies.google.com/terms?hl=en">Terms</a>
@@ -32,5 +32,9 @@ export default {
 <style>
 .recaptcha-credit a:first-of-type {
     margin-left: 0.25rem;
+}
+
+@media screen and (max-width: 820px) {
+    .text-hide-mobile { display: none; }
 }
 </style>
