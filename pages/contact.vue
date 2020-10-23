@@ -40,7 +40,7 @@
 					required
 				/>
 
-				<Recaptcha ref="recaptcha" @recaptchaSuccess="submitForm" :siteKey="recaptchaSiteKey" />
+				<Recaptcha ref="recaptcha" @recaptchaSuccess="sendContactRequest" :siteKey="recaptchaSiteKey" />
 
 				<b-button native-type="submit" type="is-primary"
 					>Let's Talk</b-button
@@ -135,11 +135,7 @@ export default {
 			this.$refs.recaptcha.validate();
 		},
 
-		async submitForm() {
-			// Clear recaptcha callback:
-			window[`recaptcha_${this.recaptchaSiteKey}`] = null;
-
-			// Success (data is valid):
+		async sendContactRequest(recaptchaResponse) {
 			try {
 				const result = await axios.post(
 					"/.netlify/functions/contact",

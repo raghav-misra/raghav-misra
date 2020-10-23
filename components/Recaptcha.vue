@@ -1,10 +1,6 @@
 <template>
     <div>
-        <div class="g-recaptcha"
-            :data-sitekey="siteKey"
-            :data-callback="`recaptcha_${siteKey}`"
-            data-size="invisible">
-        </div>
+        <div id="recaptcha" />
 
         <small class="recaptcha-credit">
             <span class="text-hide-mobile">This form is protected by</span> <b>Recaptcha:</b>
@@ -20,9 +16,15 @@ export default {
     props: ["siteKey"],
     methods: {
         validate() {
-            window[`recaptcha_${this.siteKey}`] = () => this.$emit("recaptchaSuccess");
-            grecaptcha.execute();
+            grecaptcha.execute(this.recaptchaWidget);            
         }
+    },
+    mounted() {
+        this.recaptchaWidget = grecaptcha.render("recaptcha", {
+            sitekey: this.siteKey,
+            size: "invisible",
+            callback: (recaptchaResponse) => this.$emit("recaptchaSuccess", recaptchaResponse)
+        }, true);
     }
 }
 </script>
