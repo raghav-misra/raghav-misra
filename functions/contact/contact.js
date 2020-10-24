@@ -1,25 +1,25 @@
-const axios = require("axios").default;
+const sendDiscord = require("./actions/discord.js");
+// const sendEmail = require("./actions/email.js");
 
-exports.handler = async (event) => {
-    let body = null;
+const checkBody = require("./validators/body.js");
+const checkFields = require("./validators/fields.js");
+const checkRecaptcha = require("./validators/recaptcha.js");
 
-    try {
-        body = JSON.parse(event.body);
-    }
-
-    catch (error) {
+exports.handler = async event => {
+    // Confirm body is valid JSON:
+    const body = checkBody(event);
+    if (!body) {
         return {
             statusCode: 400,
             body: JSON.stringify({
                 success: false,
-                error
+                error: "Invalid body type. Should be JSON."
             })
         };
     }
 
-    let validRequest = true;
-    ["firstName", "lastName", "email", "subject", "body"].forEach(prop => (prop in body) || (validRequest = false));
-    if (!validRequest) {
+    // Confirm all fields are present:
+    if (!checkFields(body)) {
         return {
             statusCode: 400,
             body: JSON.stringify({
@@ -29,38 +29,31 @@ exports.handler = async (event) => {
         };
     }
 
-    // Test req:
-    try {
-        const result = await axios.post(process.env.WEBHOOK_URL, {
-            username: `Form Submission from ${body.firstName}`,
-            content: `Time to do stuff! <@335208806944342028>`,
-            embeds: [
-                {
-                    color: "36095",
-                    author: { name: `${body.firstName} ${body.lastName}` },
-                    fields: Object.keys(body).map(field => ({
-                        name: field,
-                        value: body[field]
-                    }))
-                }
-            ]
-        });
-
+    // Confirm recaptcha:
+    const recaptchaResponse = await checkRecaptcha(body.recaptcha || null);
+    if (!recaptchaResponse.success) {
         return {
-            statusCode: 201,
+            statusCode: 401,
             body: JSON.stringify({
-                success: true,
-                data: result.data
+                success: false,
+                error: `Recaptcha failed. ${recaptchaResponse["error-codes"]}`
             })
         };
     }
-    catch (error) {
+
+    // Send discord request:
+    const discordRequestSuccess = await sendDiscord(body);
+
+    if (discordRequestSuccess) {
         return {
-            statusCode: 400,
-            body: JSON.stringify({
-                success: false,
-                error
-            })
+            statusCode: 201,
+            body: JSON.stringify({ success: true })
+        };
+    }
+    else {
+        return {
+            statusCode: 500,
+            body: JSON.stringify({ success: false })
         };
     }
 };

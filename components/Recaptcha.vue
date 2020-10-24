@@ -13,19 +13,27 @@
 
 <script>
 export default {
-    props: ["siteKey"],
+    data() {
+        return {
+            recaptchaWidget: null
+        }
+    },
     methods: {
         validate() {
+            try {
+                this.recaptchaWidget = grecaptcha.render("recaptcha", {
+                    sitekey: process.env.RECAPTCHA_SITE_KEY,
+                    size: "invisible",
+                    callback: (recaptchaResponse) => this.$emit("recaptchaSuccess", recaptchaResponse)
+                }, true);
+            }
+            catch (e) {
+                grecaptcha.reset(this.recaptchaWidget);
+            }
+
             grecaptcha.execute(this.recaptchaWidget);            
         }
     },
-    mounted() {
-        this.recaptchaWidget = grecaptcha.render("recaptcha", {
-            sitekey: this.siteKey,
-            size: "invisible",
-            callback: (recaptchaResponse) => this.$emit("recaptchaSuccess", recaptchaResponse)
-        }, true);
-    }
 }
 </script>
 

@@ -40,7 +40,7 @@
 					required
 				/>
 
-				<Recaptcha ref="recaptcha" @recaptchaSuccess="sendContactRequest" :siteKey="recaptchaSiteKey" />
+				<Recaptcha ref="recaptcha" @recaptchaSuccess="sendContactRequest" />
 
 				<b-button native-type="submit" type="is-primary"
 					>Let's Talk</b-button
@@ -93,16 +93,10 @@ export default {
 			],
 		};
 	},
-	
-	computed: {
-        recaptchaSiteKey() { return process.env.RECAPTCHA_SITE_KEY; },
-	},
-	
 	mounted() {
 		const data = qs.parse(location.search.replace("?", ""));
 		if (data) {
 			for (const key in data) {
-				console.log(key);
 				if (key in this.fields) {
 					this.fields[key] = data[key];
 				}
@@ -135,11 +129,11 @@ export default {
 			this.$refs.recaptcha.validate();
 		},
 
-		async sendContactRequest(recaptchaResponse) {
+		async sendContactRequest(recaptcha) {
 			try {
 				const result = await axios.post(
 					"/.netlify/functions/contact",
-					this.fields
+					{ fields: this.fields, recaptcha }
 				);
 
 				if (result.data.success) {
@@ -158,8 +152,6 @@ export default {
 					});
 				}
 			} catch (error) {
-				console.log("Contact form submit failed:", error);
-
 				this.$buefy.snackbar.open({
 					message: "Something messed up. Try reloading.",
 					type: "is-danger",

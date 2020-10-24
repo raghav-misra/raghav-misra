@@ -67,7 +67,6 @@ export default {
     },
 
     mounted() {
-        console.log(this.$router);
         setTimeout(() => this.showPage = true, 750);
     }
 }

@@ -33,9 +33,7 @@ export default {
             }
         ],
         script: [{
-            src: "https://www.google.com/recaptcha/api.js?render=explicit",
-            async: "async",
-            defer: "defer"
+            src: "https://www.google.com/recaptcha/api.js?render=explicit"
         }]
     },
 
@@ -69,7 +67,9 @@ export default {
     // Build Configuration (https://go.nuxtjs.dev/config-build)
     build: {},
 
-    env: process.env.NODE_ENV !== "production" ? require("./env.json") : {
-        RECAPTCHA_SITE_KEY: "6Lf_AdoZAAAAAK5N2qi8PgUfjVQ3H1IyQ_6erPmm"
+    env: {
+        RECAPTCHA_SITE_KEY: process.env.NODE_ENV !== "production" ?
+            "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" : // Development only key 
+            "6Le-g9oZAAAAAL7VhS32qldaZf5onhKWkW2N6Z02" // Production key
     },
 };
