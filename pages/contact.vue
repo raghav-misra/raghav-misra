@@ -111,6 +111,8 @@ export default {
 
 	methods: {
 		async formSubmit() {
+			if (this.isSubmitting) return;
+
 			let failed = false;
 			let message = "";
 
