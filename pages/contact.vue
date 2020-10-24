@@ -42,9 +42,13 @@
 
 				<Recaptcha ref="recaptcha" @recaptchaSuccess="sendContactRequest" />
 
-				<b-button native-type="submit" type="is-primary"
-					>Let's Talk</b-button
-				>
+				<b-button 
+					native-type="submit" 
+					class="submit-button"
+					:type="isSubmitting ? 'is-warning' : 'is-success'"
+					:loading="isSubmitting"
+					>Let's Talk
+				</b-button>
 			</form>
 
 			<div class="socials-list">
@@ -71,6 +75,7 @@ import qs from "qs";
 export default {
 	data() {
 		return {
+			isSubmitting: false,
 			fields: {
 				firstName: null,
 				lastName: null,
@@ -131,6 +136,8 @@ export default {
 
 		async sendContactRequest(recaptcha) {
 			try {
+				this.isSubmitting = true;
+
 				const result = await axios.post(
 					"/.netlify/functions/contact",
 					{ fields: this.fields, recaptcha }
@@ -158,6 +165,10 @@ export default {
 					position: "is-top",
 					actionText: "Okay",
 				});
+			}
+
+			finally {
+				this.isSubmitting = false;
 			}
 		},
 	},
@@ -229,6 +240,10 @@ form {
 
 .button {
 	margin: 1rem 0 !important;
+}
+
+.submit-button {
+	transition: background 0.25s ease-in-out;
 }
 
 @media screen and (max-width: 1000px) {
