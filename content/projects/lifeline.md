@@ -14,12 +14,12 @@ tech:
 buttons:
     Devpost Entry:
         href: https://devpost.com/software/lifeline-gduo1n
-        type: is-success
+        type: success
     View Source:
         href: https://gitlab.com/amadoruavs-hackthecloud2020
-        type: is-primary
+        type: primary
         icon: fab fa-gitlab
-date: 07/13/2020   
+date: 2020/07/13
 ---
 
 An platform designed to provide critical information to emergency services.

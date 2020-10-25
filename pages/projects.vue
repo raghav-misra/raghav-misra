@@ -3,8 +3,8 @@
 		<h1 class="title is-2">My Projects</h1>
 
 		<ProjectCard
-			v-for="project in projects"
-			:key="Number(project.date.split('/').join(''))"
+			v-for="(project, i) in projects"
+			:key="i"
 			:project="project"
 		/>
 
