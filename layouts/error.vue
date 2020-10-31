@@ -5,7 +5,7 @@
         </div>
 
         <h1 class="title is-1">
-            You've hit a roadblock, my friend.
+            You've hit a roadblock 🚧
         </h1>
 
         <div>
