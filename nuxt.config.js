@@ -57,7 +57,16 @@ export default {
     components: true,
 
     // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
-    buildModules: [],
+    buildModules: [
+        "@nuxtjs/prismic"
+    ],
+
+    prismic: {
+        endpoint: "https://raghav-misra.cdn.prismic.io/api/v2"
+    },
+    generate: {
+        fallback: "404.html"
+    },
 
     // Modules (https://go.nuxtjs.dev/config-modules)
     modules: [

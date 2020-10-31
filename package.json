@@ -10,11 +10,12 @@
   },
   "dependencies": {
     "@nuxt/content": "^1.10.0",
+    "@nuxtjs/prismic": "^1.2.4",
     "axios": "^0.20.0",
     "buefy": "^0.9.3",
     "bulma": "^0.9.1",
     "core-js": "^3.6.5",
-    "netlify-cli": "^2.65.7",
+    "netlify-cli": "^2.67.0",
     "nuxt": "^2.14.6",
     "qs": "^6.9.4",
     "vue-global-events": "^1.2.1",
