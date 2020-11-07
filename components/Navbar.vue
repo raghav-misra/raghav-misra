@@ -26,8 +26,7 @@ export default {
             links: [
                 { title: "About Me", href: "/" },
                 { title: "My Projects", href: "/projects" },
-                { title: "Get in Touch", href: "/contact" },
-                { title: "Blog Posts", href: "/posts" }
+                { title: "Get in Touch", href: "/contact" }
             ],
             socials: [
                 { icon: "github", href: "https://github.com/raghav-misra" },
