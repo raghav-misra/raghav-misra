@@ -2,7 +2,7 @@
     <aside class="component-navbar">
         <nav>
            <header>
-                <img class="logo" src="@/assets/logo.png" />
+                <img class="logo" alt="Logo" src="@/assets/logo.png" />
                 <h1 class="subtitle is-3">Raghav Misra</h1>
            </header>
 
