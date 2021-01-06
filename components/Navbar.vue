@@ -11,7 +11,7 @@
             </section>
 
             <section class="float-bottom vertical-nav social-bar">
-                <a class="nav-item" target="_blank" v-for="(social, i) in socials" :key="i" :href="social.href">
+                <a class="nav-item" target="_blank" v-for="(social, i) in socials" :key="i" :href="social.href" rel="noopener noreferrer">
                     <b-icon :pack="social.generic ? 'fas' : 'fab'" :icon="social.icon" />
                 </a>
             </section>
@@ -98,6 +98,7 @@ nav > * {
 
 .logo {
     width: 5rem;
+    height: 5rem;
 }
 
 @media screen and (max-width: 850px) {

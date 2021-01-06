@@ -44,10 +44,7 @@ export default {
     },
     head() {
         return {
-            title: "Raghav Misra — About",
-            script: [
-                { src: "https://identity.netlify.com/v1/netlify-identity-widget.js" }
-            ]
+            title: "Raghav Misra — About"
         };
     }
 };

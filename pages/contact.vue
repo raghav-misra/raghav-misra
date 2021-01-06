@@ -194,11 +194,11 @@ export default {
 
 @keyframes socialBar {
 	0% {
-		right: -100%;
+		transform: translateX(200%);
 	}
 
 	100% {
-		right: 0;
+		transform: translateX(0);
 	}
 }
 
@@ -206,7 +206,7 @@ export default {
 	animation: scrollIn 0.5s ease-in-out;
 	background: var(--info);
 	margin: 1rem;
-
+    will-change: transform;
 	overflow: hidden;
 	display: flex;
 	border-radius: 25px;

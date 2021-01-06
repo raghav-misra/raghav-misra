@@ -103,6 +103,7 @@ export default {
 	box-shadow: 0px 0px 20px var(--darkest);
 	overflow: hidden;
 	animation: cardEnter 0.5s ease-in-out;
+    will-change: transform;
 }
 
 .project-buttons {

@@ -1,6 +1,7 @@
 export default {
     // Target (https://go.nuxtjs.dev/config-target)
     target: "static",
+    analyze: true,
 
     // Global page headers (https://go.nuxtjs.dev/config-head)
     head: {
@@ -15,7 +16,7 @@ export default {
             {
                 hid: "description",
                 name: "description",
-                content: ""
+                content: "Hey, I'm Raghav! A full-stack web developer in high school."
             }
         ],
         link: [{
@@ -24,16 +25,29 @@ export default {
                 href: "/favicon.ico"
             },
             {
+                rel: "preload",
+                href: "https://fonts.googleapis.com/css2?family=DM+Sans&family=Fira+Code:wght@300&display=swap",
+                as: "style"
+            },
+            {
+                rel: "preload",
+                href: "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css",
+                as: "style"
+            },
+            {
                 rel: "stylesheet",
                 href: "https://fonts.googleapis.com/css2?family=DM+Sans&family=Fira+Code:wght@300&display=swap"
             },
             {
                 rel: "stylesheet",
-                href: "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css"
+                href: "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css",
+                media: "print",
+                onload: "this.media = 'all';"
             }
         ],
         script: [{
-            src: "https://www.google.com/recaptcha/api.js?render=explicit"
+            src: "https://www.google.com/recaptcha/api.js?render=explicit",
+            async: "async", 
         }]
     },
 

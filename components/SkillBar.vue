@@ -27,6 +27,7 @@ export default {
 }
 
 .skill-display {
+    will-change: width;
     background: var(--primary);
     height: 2.75rem;
     overflow: visible;
