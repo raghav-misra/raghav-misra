@@ -102,4 +102,11 @@ export default {
     border-radius: 100%;
     background-color: rgba(255, 255, 255, 0.048);
 }
+
+@media only screen and (max-width: 500px) {
+    * {
+        display: none !important;
+        opacity: 0 !important;
+    }
+}
 </style>
