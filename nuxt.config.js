@@ -16,7 +16,7 @@ export default {
             {
                 hid: "description",
                 name: "description",
-                content: "Hey, I'm Raghav! A full-stack web developer in high school."
+                content: "High-schooler, full-stack web developer, intern @ Hack+"
             }
         ],
         link: [{
