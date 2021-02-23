@@ -1,6 +1,8 @@
 import Vue from "vue";
-import Buefy from "buefy";
 
 import "@/assets/style/variables.scss";
+import { Button, Icon, Tag } from "buefy";
 
-Vue.use(Buefy);
+Vue.use(Button);
+Vue.use(Icon)
+Vue.component(Tag);
