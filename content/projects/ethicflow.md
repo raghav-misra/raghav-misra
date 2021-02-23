@@ -20,4 +20,4 @@ buttons:
 date: 2021/02/21
 ---
 
-An incremental game where you build a coin-flipping company from the ground up!
+With a scan of a barcode, find out whether your favorite brand uses ethical practices and is worth supporting.
