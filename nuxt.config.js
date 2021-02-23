@@ -48,7 +48,12 @@ export default {
         script: [{
             src: "https://www.google.com/recaptcha/api.js?render=explicit",
             async: "async",
+            defer: "defer"
         }]
+    },
+
+    http2: {
+        push: true
     },
 
     // Global CSS (https://go.nuxtjs.dev/config-css)

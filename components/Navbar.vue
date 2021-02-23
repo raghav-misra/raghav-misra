@@ -102,6 +102,10 @@ nav > * {
 }
 
 @media screen and (max-width: 850px) {
+    .logo {
+        display: none;
+    }
+
     .vertical-nav {
         display: block;
         text-align: center;
