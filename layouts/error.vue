@@ -9,8 +9,16 @@
         </h1>
 
         <div>
-            <b-button tag="nuxt-link" to="/" class="redirect subtitle is-3" type="is-danger">Let's go home.</b-button>
-            <NuxtLink :to="reportMissingPage" class="subtitle is-5">Report a broken link.</NuxtLink>
+            <b-button
+                tag="nuxt-link"
+                to="/"
+                class="redirect subtitle is-3"
+                type="is-danger"
+                >Let's go home.</b-button
+            >
+            <NuxtLink :to="reportMissingPage" class="subtitle is-5"
+                >Report a broken link.</NuxtLink
+            >
         </div>
     </div>
 </template>
@@ -20,7 +28,7 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: center
+    justify-content: center;
 }
 
 .error-text {
@@ -41,7 +49,8 @@ a.subtitle:not(.redirect) {
     color: var(--primary);
 }
 
-.error-text, .redirect {
+.error-text,
+.redirect {
     display: block;
     width: 20rem;
 }
@@ -54,7 +63,7 @@ export default {
     data() {
         return {
             showPage: false
-        }
+        };
     },
 
     computed: {
@@ -67,7 +76,7 @@ export default {
     },
 
     mounted() {
-        setTimeout(() => this.showPage = true, 750);
+        setTimeout(() => (this.showPage = true), 750);
     }
-}
+};
 </script>
