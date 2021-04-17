@@ -1,6 +1,9 @@
 <template>
     <div class="component-skillbar">
-        <div class="skill-display" :style="`--skill-percent: ${skill.rating * 10}%;`">
+        <div
+            class="skill-display"
+            :style="`--skill-percent: ${skill.rating * 10}%;`"
+        >
             <div class="caption">
                 {{ skill.name }}
                 <b>{{ skill.rating }} / 10</b>
@@ -12,13 +15,17 @@
 <script>
 export default {
     props: { skill: Object }
-}
+};
 </script>
 
 <style scoped>
 @keyframes showProgress {
-    from { width: 0; }
-    to { width: var(--skill-percent); }
+    from {
+        width: 0;
+    }
+    to {
+        width: var(--skill-percent);
+    }
 }
 
 .component-skillbar {

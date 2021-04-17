@@ -1,51 +1,60 @@
 <template>
-	<div
-		class="component-mouse-trail"
-		:style="`
+    <div
+        class="component-mouse-trail"
+        :style="
+            `
             left: ${x}px; 
             top: ${y}px;
             transform: scale(${scale});
-        `"
-	>
-		<GlobalEvents @mousemove="followMouse" @mouseover="focusEnlarge" @click="clickAnimate" />
+        `
+        "
+    >
+        <GlobalEvents
+            @mousemove="followMouse"
+            @mouseover="focusEnlarge"
+            @click="clickAnimate"
+        />
         <div>
-            <div 
-                class="click-effect" 
-                :style="`
+            <div
+                class="click-effect"
+                :style="
+                    `
                     width: ${clickEffect ? 5 : 0}rem;
                     height: ${clickEffect ? 5 : 0}rem;
                     opacity: ${clickEffect ? 1 : 0};
-                `" 
+                `
+                "
             />
         </div>
-	</div>
+    </div>
 </template>
 
 <script>
 export default {
-	data() {
-		return {
-			x: 0,
-			y: 0,
+    data() {
+        return {
+            x: 0,
+            y: 0,
             scale: 1,
             clickEffect: 0
-		};
-	},
+        };
+    },
 
-	methods: {
-		followMouse(e) {
-			setTimeout(() => {
-				this.x = e.pageX;
-				this.y = e.pageY;
-			}, 25);
-		},
-		focusEnlarge(e) {
-			try {
+    methods: {
+        followMouse(e) {
+            setTimeout(() => {
+                this.x = e.pageX;
+                this.y = e.pageY;
+            }, 25);
+        },
+        focusEnlarge(e) {
+            try {
                 const targets = ["A", "BUTTON"];
                 if (
                     targets.indexOf(e.target.nodeName) > -1 ||
                     targets.indexOf(e.target.parentNode.nodeName) > -1 ||
-                    targets.indexOf(e.target.parentNode.parentNode.nodeName) > -1
+                    targets.indexOf(e.target.parentNode.parentNode.nodeName) >
+                        -1
                 ) {
                     this.scale = 2;
                     e.target.addEventListener(
@@ -54,28 +63,24 @@ export default {
                             this.scale = 1;
                         },
                         {
-                            once: true,
+                            once: true
                         }
                     );
                 }
-            }
-
-            catch (e) {}
+            } catch (e) {}
         },
         clickAnimate(e) {
             this.clickEffect = true;
-            setTimeout(() => this.clickEffect = false, 300);
-        },
-	},
+            setTimeout(() => (this.clickEffect = false), 300);
+        }
+    }
 };
 </script>
 
 <style scoped>
 * {
-    transition: transform 0.25s ease-in-out,
-        width 0.25s ease-in-out,
-        height 0.25s ease-in-out,
-        opacity 0.25s ease-in-out;
+    transition: transform 0.25s ease-in-out, width 0.25s ease-in-out,
+        height 0.25s ease-in-out, opacity 0.25s ease-in-out;
 }
 
 .component-mouse-trail {

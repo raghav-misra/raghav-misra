@@ -1,18 +1,34 @@
 <template>
     <aside class="component-navbar">
         <nav>
-           <header>
+            <header>
                 <img class="logo" alt="Logo" src="@/assets/logo.png" />
                 <h1 class="subtitle is-3">Raghav Misra</h1>
-           </header>
+            </header>
 
             <section class="vertical-nav">
-                <NuxtLink class="nav-item" v-for="(link, i) in links" :to="link.href" :key="i" v-text="link.title" />
+                <NuxtLink
+                    class="nav-item"
+                    v-for="(link, i) in links"
+                    :to="link.href"
+                    :key="i"
+                    v-text="link.title"
+                />
             </section>
 
             <section class="float-bottom vertical-nav social-bar">
-                <a class="nav-item" target="_blank" v-for="(social, i) in socials" :key="i" :href="social.href" rel="noopener noreferrer">
-                    <b-icon :pack="social.generic ? 'fas' : 'fab'" :icon="social.icon" />
+                <a
+                    class="nav-item"
+                    target="_blank"
+                    v-for="(social, i) in socials"
+                    :key="i"
+                    :href="social.href"
+                    rel="noopener noreferrer"
+                >
+                    <b-icon
+                        :pack="social.generic ? 'fas' : 'fab'"
+                        :icon="social.icon"
+                    />
                 </a>
             </section>
         </nav>
@@ -20,6 +36,8 @@
 </template>
 
 <script>
+import { socials } from "@/assets/data";
+
 export default {
     data() {
         return {
@@ -28,12 +46,7 @@ export default {
                 { title: "My Projects", href: "/projects" },
                 { title: "Get in Touch", href: "/contact" }
             ],
-            socials: [
-                { icon: "github", href: "https://github.com/raghav-misra" },
-                { icon: "linkedin", href: "https://linkedin.com/in/raghav--misra" },
-                { icon: "gitlab", href: "https://gitlab.com/raghav-misra" },
-                { icon: "envelope", href: "mailto:raghav.m2014@gmail.com", generic: true }
-            ]
+            socials
         };
     }
 };
@@ -74,7 +87,7 @@ nav > * {
 }
 
 .social-bar {
-    margin: 1rem;    
+    margin: 1rem;
 }
 
 .social-bar .nav-item {
@@ -87,7 +100,8 @@ nav > * {
     transition: transform 0.25s ease-in-out;
 }
 
-.nav-item:hover, .nav-item:active {
+.nav-item:hover,
+.nav-item:active {
     transform: scale(1.125);
     color: var(--primary);
 }
@@ -147,7 +161,7 @@ nav > * {
     nav {
         border-radius: 0 0 30px 30px;
     }
-    
+
     .social-bar {
         display: none;
     }

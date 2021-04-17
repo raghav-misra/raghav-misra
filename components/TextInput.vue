@@ -1,21 +1,21 @@
 <template>
     <div class="component-text-input">
         <label v-if="label" v-text="label" />
-        <textarea 
+        <textarea
             v-if="multiline"
             :value="value"
             @input="updateValue($event.target.value)"
             :placeholder="placeholder"
             :required="required"
-        />  
-        <input 
-            v-else 
+        />
+        <input
+            v-else
             @input="updateValue($event.target.value)"
             :value="value"
-            :placeholder="placeholder" 
+            :placeholder="placeholder"
             :type="type"
             :required="required"
-        />  
+        />
     </div>
 </template>
 
@@ -47,8 +47,8 @@ export default {
         }
     },
     methods: {
-        updateValue(value) { 
-            this.$emit("input", value); 
+        updateValue(value) {
+            this.$emit("input", value);
         }
     }
 };
@@ -59,7 +59,8 @@ export default {
     margin: 1rem 0;
 }
 
-textarea, input {
+textarea,
+input {
     background: var(--dark);
     color: var(--light);
     border: none;
@@ -81,16 +82,19 @@ label {
     font-weight: bold;
 }
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: var(--placeholder);
     opacity: 1; /* Firefox */
 }
 
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
     color: var(--placeholder);
 }
 
-::-ms-input-placeholder { /* Microsoft Edge */
+::-ms-input-placeholder {
+    /* Microsoft Edge */
     color: var(--placeholder);
 }
 </style>

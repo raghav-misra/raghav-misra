@@ -2,21 +2,25 @@
     <section class="component-page">
         <div class="index-heading">
             <h1 class="title is-2">
-                Solving problems,<br>
+                Solving problems,<br />
                 <vue-typed-js :strings="['one line of code at a time']">
                     <code class="title is-4">
                         <span class="typing"></span>
                     </code>
                 </vue-typed-js>
             </h1>
-            
+
             <NuxtContent :document="mainContent" />
         </div>
 
         <div>
             <h1 class="title">My Technical Skillset</h1>
             <div class="skills">
-                <SkillBar v-for="(skill, i) in skills" :key="i" :skill="skill" />
+                <SkillBar
+                    v-for="(skill, i) in skills"
+                    :key="i"
+                    :skill="skill"
+                />
             </div>
         </div>
     </section>

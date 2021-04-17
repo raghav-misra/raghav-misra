@@ -3,7 +3,8 @@
         <div id="recaptcha" />
 
         <small class="recaptcha-credit">
-            <span class="text-hide-mobile">This form is protected by</span> <b>Recaptcha:</b>
+            <span class="text-hide-mobile">This form is protected by</span>
+            <b>Recaptcha:</b>
             <a href="https://policies.google.com/privacy?hl=en">Privacy</a>
             —
             <a href="https://policies.google.com/terms?hl=en">Terms</a>
@@ -16,25 +17,29 @@ export default {
     data() {
         return {
             recaptchaWidget: null
-        }
+        };
     },
     methods: {
         validate() {
             try {
-                this.recaptchaWidget = grecaptcha.render("recaptcha", {
-                    sitekey: process.env.RECAPTCHA_SITE_KEY,
-                    size: "invisible",
-                    callback: (recaptchaResponse) => this.$emit("recaptchaSuccess", recaptchaResponse)
-                }, true);
-            }
-            catch (e) {
+                this.recaptchaWidget = grecaptcha.render(
+                    "recaptcha",
+                    {
+                        sitekey: process.env.RECAPTCHA_SITE_KEY,
+                        size: "invisible",
+                        callback: recaptchaResponse =>
+                            this.$emit("recaptchaSuccess", recaptchaResponse)
+                    },
+                    true
+                );
+            } catch (e) {
                 grecaptcha.reset(this.recaptchaWidget);
             }
 
-            grecaptcha.execute(this.recaptchaWidget);            
+            grecaptcha.execute(this.recaptchaWidget);
         }
-    },
-}
+    }
+};
 </script>
 
 <style>
@@ -43,6 +48,8 @@ export default {
 }
 
 @media screen and (max-width: 820px) {
-    .text-hide-mobile { display: none; }
+    .text-hide-mobile {
+        display: none;
+    }
 }
 </style>

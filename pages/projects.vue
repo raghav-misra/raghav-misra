@@ -1,35 +1,37 @@
 <template>
-	<section id="projects" class="component-page">
-		<h1 class="title is-2">My Projects</h1>
+    <section id="projects" class="component-page">
+        <h1 class="title is-2">My Projects</h1>
 
-		<ProjectCard
-			v-for="(project, i) in projects"
-			:key="i"
-			:project="project"
-		/>
+        <ProjectCard
+            v-for="(project, i) in projects"
+            :key="i"
+            :project="project"
+        />
 
-		<div class="end-card">
-			<h1 class="subtitle is-4">You've reached the beginning...</h1>
-			<b-button type="is-warning" @click="scrollToTop"><b>Go back up?</b></b-button>
-		</div>
-	</section>
+        <div class="end-card">
+            <h1 class="subtitle is-4">You've reached the beginning...</h1>
+            <b-button type="is-warning" @click="scrollToTop">
+				<b>Go back up?</b>
+			</b-button>
+        </div>
+    </section>
 </template>
 
 <script>
 export default {
-	async asyncData({ $content }) {
-		const projects = await $content("projects")
-			.sortBy("date", "desc")
-			.fetch();
+    async asyncData({ $content }) {
+        const projects = await $content("projects")
+            .sortBy("date", "desc")
+            .fetch();
 
-		return { projects };
-	},
-	methods: {
-		scrollToTop() {
-			document.querySelector(".component-page").scrollTop = 0;
-		}
-	},
-	head() {
+        return { projects };
+    },
+    methods: {
+        scrollToTop() {
+            document.querySelector(".component-page").scrollTop = 0;
+        }
+    },
+    head() {
         return {
             title: "Raghav Misra — Projects"
         };
