@@ -16,6 +16,14 @@
 				<b>Go back up?</b>
 			</b-button>
         </div>
+
+        <div class="end-card" v-if="filteredProjects.length === 0">
+            <br>
+            <h1 class="subtitle is-4">Toggle a switch at the top to see my projects.</h1>
+            <b-button type="is-success" @click="resetView">
+				<b>Reset View</b>
+			</b-button>
+        </div>
     </section>
 </template>
 
@@ -37,6 +45,10 @@ export default {
     methods: {
         scrollToTop() {
             document.querySelector(".component-page").scrollTop = 0;
+        },
+        resetView() {
+            this.showActualProjects = true;
+            this.showFunProjects = false;
         }
     },
     computed: {
