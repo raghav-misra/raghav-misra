@@ -1,14 +1,16 @@
 <template>
     <section id="projects" class="component-page">
         <h1 class="title is-2">My Projects</h1>
+        <b-switch v-model="showActualProjects" type="is-warning">Actual Projects</b-switch>
+        <b-switch v-model="showFunProjects" type="is-success">Fun Projects</b-switch>
 
         <ProjectCard
-            v-for="(project, i) in projects"
+            v-for="(project, i) in filteredProjects"
             :key="i"
             :project="project"
         />
 
-        <div class="end-card">
+        <div class="end-card" v-if="filteredProjects.length > 0">
             <h1 class="subtitle is-4">You've reached the beginning...</h1>
             <b-button type="is-warning" @click="scrollToTop">
 				<b>Go back up?</b>
@@ -26,9 +28,25 @@ export default {
 
         return { projects };
     },
+    data() {
+        return {
+            showActualProjects: true,
+            showFunProjects: false
+        }
+    },
     methods: {
         scrollToTop() {
             document.querySelector(".component-page").scrollTop = 0;
+        }
+    },
+    computed: {
+        filteredProjects() {
+            return this.projects.filter(project => {
+                if (project.fun && this.showFunProjects) return true;
+                if (!project.fun && this.showActualProjects) return true;
+
+                return false;
+            });
         }
     },
     head() {

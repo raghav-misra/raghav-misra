@@ -1,11 +1,11 @@
 ---
 name: LifeLine
 tech:
-    -   text: Vue + Nuxt
+    -   text: Vue
         type: success
     -   text: Bulma
         type: primary
-    -   text: Django + DRF
+    -   text: Django
         type: danger
     -   text: MySQL
         type: primary

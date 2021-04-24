@@ -1,10 +1,10 @@
 ---
 name: WriteKit
 tech:
-    -   text: Vue + Nuxt
+    -   text: Vue
         type: success
     -   text: Bulma
-        type: primary
+        type: danger
     -   text: Lambda
         type: warning
     -   text: FaunaDB

@@ -1,7 +1,7 @@
 ---
 name: VolunTier
 tech:
-    -   text: Vue + Nuxt
+    -   text: Vue
         type: success
     -   text: Bulma
         type: primary

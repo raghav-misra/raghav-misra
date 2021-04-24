@@ -1,22 +1,22 @@
 ---
 name: EthicFlow
-tech: 
-    -   text: NuxtJS
-        type: success
-    -   text: ExpressJS
-        type: warning
-    -   text: NodeJS
-        type: danger
-    -   text: TypeScript
-        type: primary
+tech:
+    - text: Vue
+      type: success
+    - text: Express
+      type: warning
+    - text: Node
+      type: danger
+    - text: TypeScript
+      type: primary
 buttons:
-    Live Site: 
+    Live Site:
         href: https://ethicflow.netlify.app
         type: success
     View Source:
         href: https://github.com/raghav-misra/ethicflow-client
         type: primary
-        icon: fab fa-github 
+        icon: fab fa-github
 date: 2021/02/21
 ---
 
