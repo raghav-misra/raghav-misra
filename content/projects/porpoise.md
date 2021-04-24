@@ -17,4 +17,4 @@ date: 2020/07/23
 fun: true
 ---
 
-A fun rhythmic platformer with a pleasant twist, headphones recommended!  
+Partially successful attempts at an ecosystem of modern frontend libraries. 
