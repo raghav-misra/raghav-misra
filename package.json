@@ -16,6 +16,7 @@
     "core-js": "^3.6.5",
     "netlify-cli": "^2.67.0",
     "nuxt": "^2.14.6",
+    "portal-vue": "^2.1.7",
     "qs": "^6.9.4",
     "vue-global-events": "^1.2.1",
     "vue-typed-js": "^0.1.2"

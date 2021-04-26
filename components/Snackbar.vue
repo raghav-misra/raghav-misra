@@ -76,6 +76,7 @@ export default {
     pointer-events: all;
     background: var(--darkest);
     padding: 1rem;
+    border: 1px solid var(--light);
     display: flex;
     justify-content: center;
     align-items: center;

@@ -71,15 +71,13 @@ export default {
     plugins: [
         "@/plugins/buefy.js",
         "@/plugins/vue-typed.js",
-        "@/plugins/vue-global-events.js"
+        "@/plugins/vue-global-events.js",
+        "@/plugins/portal-vue.js"
     ],
 
     // Auto import components (https://go.nuxtjs.dev/config-components)
     components: true,
 
-    prismic: {
-        endpoint: "https://raghav-misra.cdn.prismic.io/api/v2"
-    },
     generate: {
         fallback: "404.html"
     },

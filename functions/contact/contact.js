@@ -44,7 +44,7 @@ exports.handler = async event => {
     // Send discord request:
     const discordRequestSuccess = await sendDiscord(body);
 
-    if (discordRequestSuccess) {
+    if (discordRequestSuccess.success) {
         return {
             statusCode: 201,
             body: JSON.stringify({ success: true })
@@ -53,7 +53,7 @@ exports.handler = async event => {
     else {
         return {
             statusCode: 500,
-            body: JSON.stringify({ success: false })
+            body: JSON.stringify(discordRequestSuccess)
         };
     }
 };

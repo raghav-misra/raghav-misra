@@ -1,12 +1,14 @@
 <template>
     <section class="component-page">
-        <Snackbar
-            :type="snackbar.type"
-            :message="snackbar.message"
-            :action="snackbar.action"
-            :showing="snackbar.showing"
-            @dismiss="dismissSnackbar"
-        />
+        <portal to="snackbar">
+            <Snackbar
+                :type="snackbar.type"
+                :message="snackbar.message"
+                :action="snackbar.action"
+                :showing="snackbar.showing"
+                @dismiss="dismissSnackbar"
+            />
+        </portal>
 
         <h1 class="title is-2">Let's get in touch.</h1>
 
