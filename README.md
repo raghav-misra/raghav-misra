@@ -37,7 +37,7 @@
         <tr>
             <td>Python</td>
             <td>Web Components</td>
-            <td>MongoDB (Atlas)</td>
+            <td>MongoDB</td>
         </tr>
     </table>
 </code>

@@ -58,8 +58,6 @@
 import axios from "axios";
 import qs from "qs";
 import { formLayout, socials } from "@/assets/data";
-import { SnackbarProgrammatic } from "buefy";
-
 export default {
     data() {
         return {
@@ -116,7 +114,7 @@ export default {
                     message,
                     type: "is-danger",
                     action: "Okay"
-                    };
+                };  
             }
 
             this.$refs.recaptcha.validate();

@@ -28,7 +28,7 @@
 
 <script>
 export default {
-    async asyncData({ $content, params }) {
+    async asyncData({ $content }) {
         const mainContent = await $content("about", "main").fetch();
         return { mainContent };
     },
@@ -39,10 +39,10 @@ export default {
                 { name: "CSS3 + SASS", rating: 10 },
                 { name: "ES6 + TypeScript", rating: 10 },
                 { name: "Vue + Nuxt", rating: 10 },
-                { name: "NodeJS + Express", rating: 9.5 },
-                { name: "MongoDB Atlas", rating: 9.5 },
-                { name: "React + Redux", rating: 9.0 },
-                { name: "Python3 + Flask", rating: 8.5 }
+                { name: "Node + Express", rating: 9.5 },
+                { name: "Mongo + Mongoose", rating: 9.5 },
+                { name: "React + Next", rating: 9.0 },
+                { name: "Python + Flask", rating: 8.5 }
             ]
         };
     },
