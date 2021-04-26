@@ -53,7 +53,7 @@ export default {
     background: var(--darkest);
     padding: 0.25rem 0.5rem;
     border-radius: 15px;
-    width: 12.5rem;
+    width: 15rem;
     font-size: 0.875rem;
     display: flex;
     align-items: center;
