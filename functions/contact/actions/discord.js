@@ -16,7 +16,7 @@ module.exports = async body => {
             ]
         });
 
-        return true;
+        return { success: true };
     }
     catch (error) {
         return { success: false, error };
