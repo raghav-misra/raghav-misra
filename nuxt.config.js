@@ -91,8 +91,6 @@ export default {
     build: {},
 
     env: {
-        RECAPTCHA_SITE_KEY: process.env.NODE_ENV !== "production" ?
-            "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" : // Development only key 
-            "6Le-g9oZAAAAAL7VhS32qldaZf5onhKWkW2N6Z02" // Production key
+        RECAPTCHA_SITE_KEY: "6Le-g9oZAAAAAL7VhS32qldaZf5onhKWkW2N6Z02"
     },
 };

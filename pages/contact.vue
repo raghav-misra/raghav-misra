@@ -123,6 +123,8 @@ export default {
         },
 
         async sendContactRequest(recaptcha) {
+            console.log(recaptcha);
+
             try {
                 this.isSubmitting = true;
 
@@ -147,6 +149,8 @@ export default {
                     };
                 }
             } catch (error) {
+                console.log(error.response);
+
                 this.snackbar = {
                     showing: true,
                     message: "Something messed up. Try reloading.",
