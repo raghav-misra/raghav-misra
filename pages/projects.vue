@@ -1,8 +1,15 @@
 <template>
     <section id="projects" class="component-page">
         <h1 class="title is-2">My Projects</h1>
-        <b-switch v-model="showActualProjects" type="is-warning">Actual Projects</b-switch>
-        <b-switch v-model="showFunProjects" type="is-success">Fun Projects</b-switch>
+        <div class="toggle-row">
+            <span>Actual</span>
+            <Toggle 
+                on="success" 
+                off="warning" 
+                v-model="showFunProjects" 
+            />
+            <span>Fun</span>
+        </div>
 
         <ProjectCard
             v-for="(project, i) in filteredProjects"
@@ -27,6 +34,17 @@
     </section>
 </template>
 
+<style scoped>
+.toggle-row {
+    display: flex;
+    align-items: center;
+}
+
+.toggle-row > * {
+    margin: 0 0.25rem;
+}
+</style>
+
 <script>
 export default {
     async asyncData({ $content }) {
@@ -38,7 +56,6 @@ export default {
     },
     data() {
         return {
-            showActualProjects: true,
             showFunProjects: false
         }
     },
@@ -53,12 +70,7 @@ export default {
     },
     computed: {
         filteredProjects() {
-            return this.projects.filter(project => {
-                if (project.fun && this.showFunProjects) return true;
-                if (!project.fun && this.showActualProjects) return true;
-
-                return false;
-            });
+            return this.projects.filter(project => !!project.fun === this.showFunProjects);
         }
     },
     head() {
