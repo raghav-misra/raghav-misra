@@ -11,10 +11,10 @@ tech:
         type: dark
 buttons:
     Live Site: 
-        href: https://influxion.obliviontech.dev
+        href: https://influxion.netlify.app/
         type: success
     View Source:
-        href: https://github.com/LehuyH/CoinAGES
+        href: https://github.com/raghav-misra/influxion-rhythim-game
         type: primary
         icon: fab fa-github 
 date: 2019/07/26

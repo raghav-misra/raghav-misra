@@ -11,7 +11,7 @@ tech:
         type: dark
 buttons:
     Live Site: 
-        href: https://coinages.obliviontech.dev
+        href: https://coinages.netlify.app/
         type: success
     View Source:
         href: https://github.com/LehuyH/CoinAGES
