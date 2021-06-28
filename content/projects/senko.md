@@ -10,7 +10,7 @@ buttons:
         href: https://npmjs.com/package/senko
         type: success
     View Source:
-        href: https://github.com/raghav-misra/senko
+        href: https://github.com/porpoise/senko
         type: primary
         icon: fab fa-github
 date: 2021/04/23
