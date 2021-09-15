@@ -1,6 +1,6 @@
 # Hey, I'm Raghav Misra!
 
-### *Fullstack Web Developer — Highschool Sophomore*
+### *Fullstack Web Developer — Highschool Junior*
 <br>
 
 <a href="https://raghavmisra.dev"><img src="https://img.shields.io/badge/portfolio-raghavmisra.dev-blue?style=for-the-badge&logo=google%20chrome&logoColor=lightblue"></a>
