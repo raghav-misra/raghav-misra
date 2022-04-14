@@ -13,7 +13,7 @@
             <NuxtContent :document="mainContent" />
         </div>
 
-        <div>
+        <!--<div>
             <h1 class="title">My Technical Skillset</h1>
             <div class="skills">
                 <SkillBar
@@ -22,7 +22,7 @@
                     :skill="skill"
                 />
             </div>
-        </div>
+        </div>-->
     </section>
 </template>
 
