@@ -3,12 +3,8 @@ name: VolunTier
 tech:
     -   text: Vue
         type: success
-    -   text: Bulma
-        type: primary
     -   text: Lambda
         type: warning
-    -   text: FaunaDB
-        type: primary
 buttons:
     Live Site:
         href: https://voluntier.netlify.app

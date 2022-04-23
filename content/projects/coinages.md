@@ -2,13 +2,11 @@
 name: CoinAGES
 tech: 
     -   text: HTML5
-        type: danger
+        type: success
     -   text: CSS3
-        type: primary
-    -   text: ES6
         type: warning
-    -   text: Netlify
-        type: dark
+    -   text: ES6
+        type: primary
 buttons:
     Live Site: 
         href: https://coinages.netlify.app/

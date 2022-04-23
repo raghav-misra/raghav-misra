@@ -3,14 +3,10 @@ name: LifeLine
 tech:
     -   text: Vue
         type: success
-    -   text: Bulma
-        type: primary
     -   text: Django
-        type: danger
-    -   text: MySQL
-        type: primary
+        type: warning
     -   text: SwiftUI
-        type: danger
+        type: primary
 buttons:
     Devpost Entry:
         href: https://devpost.com/software/lifeline-gduo1n

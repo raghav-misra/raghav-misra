@@ -2,9 +2,9 @@
 name: Porpoise 
 tech: 
     -   text: TypeScript
-        type: primary
+        type: danger
     -   text: Web Components
-        type: success
+        type: primary
 buttons:
     NPM package: 
         href: https://npmjs.com/package/reporpoise

@@ -4,8 +4,6 @@ tech:
     -   text: Vue
         type: success
     -   text: Typescript
-        type: primary
-    -   text: Netlify
         type: warning
 buttons:
     Live Site:

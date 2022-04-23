@@ -2,13 +2,11 @@
 name: Influxion 
 tech: 
     -   text: HTML5
-        type: danger
+        type: success
     -   text: CSS3
-        type: primary
-    -   text: ES6
         type: warning
-    -   text: Konva.js
-        type: dark
+    -   text: ES6
+        type: primary
 buttons:
     Live Site: 
         href: https://influxion.netlify.app/

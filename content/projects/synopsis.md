@@ -1,12 +1,10 @@
 ---
 name: Synopsis
 tech:
-    - text: Vue
-      type: success
-    - text: Flask
-      type: warning
-    - text: Heroku
-      type: link
+    -   text: Vue
+        type: success
+    -   text: Flask
+        type: warning
 buttons:
     Live Site:
         href: https://the-synopsis.netlify.app

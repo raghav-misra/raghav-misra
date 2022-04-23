@@ -1,9 +1,9 @@
 ---
 name: Senko
 tech:
-    -   text: React
-        type: danger
     -   text: Typescript
+        type: danger
+    -   text: React
         type: primary
 buttons:
     NPM Package:

@@ -3,12 +3,8 @@ name: WriteKit
 tech:
     -   text: Vue
         type: success
-    -   text: Bulma
-        type: danger
     -   text: Lambda
         type: warning
-    -   text: FaunaDB
-        type: primary
 buttons:
     Live Site:
         href: https://writekit.netlify.app

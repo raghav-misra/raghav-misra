@@ -5,8 +5,6 @@ tech:
       type: success
     - text: Express
       type: warning
-    - text: Node
-      type: danger
     - text: TypeScript
       type: primary
 buttons:

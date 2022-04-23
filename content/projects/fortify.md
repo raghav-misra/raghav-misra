@@ -2,13 +2,9 @@
 name: Fortify
 tech:
     -   text: Web Components
-        type: danger
-    -   text: Express
-        type: primary
-    -   text: MongoDB
         type: success
-    -   text: Repl.it
-        type: dark
+    -   text: Express
+        type: warning
 buttons:
     Live Site:
         href: https://codejamentry.raghavm.repl.co/
