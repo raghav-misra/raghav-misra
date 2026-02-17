@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Raghav Misra</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #151515;
+        --fg: #f5f5f5;
+        --link: #60a982;
+
+        background-color: var(--bg);
+        background-image: radial-gradient(
+          rgba(255, 255, 255, 0.06) 1px,
+          transparent 1px
+        );
+        background-size: 20px 20px;
+        color: var(--fg);
+        font-size: 20px;
+        line-height: 1.75rem;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        font-family: "Instrument Serif", serif;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        cursor:
+          url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='48'><text y='36' font-size='36' opacity='0.5'>🐱</text></svg>")
+            16 16,
+          auto;
+      }
+
+      a {
+        color: var(--link);
+        text-decoration: none;
+      }
+
+      a:hover {
+        cursor:
+          url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='48'><text y='36' font-size='36' opacity='0.5'>🤯</text></svg>")
+            16 16,
+          auto;
+      }
+
+      a:hover,
+      a:focus {
+        text-decoration: underline;
+      }
+
+      h3:hover {
+        cursor:
+          url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='48'><text y='36' font-size='36' opacity='0.5'>😻</text></svg>")
+            16 16,
+          auto;
+      }
+
+      body {
+        width: 100%;
+        max-width: 768px;
+        padding: 2rem;
+        height: 100%;
+        max-height: 1024px;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        overflow: hidden;
+      }
+
+      .content-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        flex: 1;
+        overflow-y: auto;
+        opacity: 1;
+        transition: opacity 0.3s ease-in-out;
+      }
+
+      .content-container.hidden {
+        display: none;
+        opacity: 0;
+      }
+
+      .content-container.fade-out {
+        opacity: 0;
+      }
+
+      .header-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+        position: relative;
+      }
+
+      .header-row h2 {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        transition:
+          left 0.3s ease-in-out,
+          transform 0.3s ease-in-out;
+      }
+
+      .header-row.experiences-active h2 {
+        left: 0;
+        transform: translateX(0);
+      }
+
+      .back-link {
+        opacity: 0;
+        visibility: hidden;
+        transition:
+          opacity 0.3s ease-in-out,
+          visibility 0.3s ease-in-out;
+      }
+
+      .header-row.experiences-active .back-link {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      :not(b) {
+        font-weight: normal;
+      }
+
+      .wave {
+        display: inline-block;
+        animation: wave 2s infinite;
+        transform-origin: 70% 70%;
+      }
+
+      @keyframes wave {
+        0% {
+          transform: rotate(0deg);
+        }
+
+        15% {
+          transform: rotate(14deg);
+        }
+
+        30% {
+          transform: rotate(-8deg);
+        }
+
+        40% {
+          transform: rotate(14deg);
+        }
+
+        50% {
+          transform: rotate(-4deg);
+        }
+
+        60% {
+          transform: rotate(10deg);
+        }
+
+        70% {
+          transform: rotate(0deg);
+        }
+
+        100% {
+          transform: rotate(0deg);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="header-row" id="header-row">
+      <h2>Hey, I'm Raghav! <span class="wave">👋</span></h2>
+      <a href="#" id="back-to-main" class="back-link">&larr; Back home.</a>
+    </div>
+
+    <main class="content-container" id="main-container">
+      <p>
+        Currently, I am building
+        <a href="https://elevenlabs.io/agents" target="_blank">ElevenLabs</a>'
+        voice agents platform, and in my free time, develop and scale
+        <a href="https://studykit.app" target="_blank">StudyKit</a> to over one
+        hundred thousand users.
+      </p>
+
+      <p>
+        Before that, I studied computer science and mathematics at the
+        <a href="https://umd.edu/" target="_blank">University of Maryland</a>,
+        interning at
+        <a href="https://www.palantir.com/platforms/gotham/" target="_blank"
+          >Palantir</a
+        >, <a href="https://www.android.com/auto/" target="_blank">Google</a>,
+        and <a href="https://aws.amazon.com/ebs/" target="_blank">AWS</a> along
+        the way.
+      </p>
+
+      <p class="text-center">
+        [<a href="#" id="show-experiences">More about my experiences.</a>]
+      </p>
+
+      <p>
+        While probably sparser now that I'm working full time, my
+        <a href="https://github.com/raghav-misra" target="_blank">Github</a>
+        holds many of my experiments in web ML, frontend and AI dev tooling, as
+        well as past hackathon projects.
+      </p>
+
+      <p>
+        Don't hesitate to get in touch with exciting ideas, opportunities, or
+        just to say hi — links below! Love talking and learning about all things
+        applied AI, distributed systems, and
+        <a href="https://tc39.es/" target="_blank">TC39</a> :)
+      </p>
+
+      <span style="margin-top: auto"></span>
+    </main>
+
+    <main class="content-container hidden" id="experiences-container">
+      <h3>At the moment...</h3>
+
+      <p>
+        <i
+          >Engineering at
+          <a href="https://elevenlabs.io/agents" target="_blank">ElevenLabs</a>
+          — ElevenAgents.</i
+        >
+        <br />
+        Building robust testing infrastructure for voice AI agents, and
+        strengthening agentic workflow and conversational analytics features
+        from product UI to backend orchestration.
+      </p>
+
+      <p>
+        <i
+          >Co-founder at
+          <a href="https://studykit.app" target="_blank">StudyKit</a> — many
+          things.</i
+        >
+
+        <br />
+        StudyKit is an AI-powered edtech platform helping over 100k students
+        across the world learn smarter and build effective study habits.
+      </p>
+
+      <h3>In a previous life...</h3>
+
+      <p>
+        <i
+          >SWE Intern at
+          <a href="https://www.android.com/auto/" target="_blank">Google</a> —
+          Android Automotive.</i
+        >
+        <br />
+        Built user experiences for authentication resurfacing in vehicles
+        running Android Auto.
+      </p>
+
+      <p>
+        <i
+          >SWE Intern at
+          <a href="https://www.palantir.com/platforms/gotham/" target="_blank"
+            >Palantir</a
+          >
+          — Gotham.</i
+        >
+        <br />
+        Created data aggregation and visualization features for defense
+        products. Led a greenfield effort to build a performance-optimized
+        version of the product frontend.
+      </p>
+
+      <p>
+        <i
+          >SDE Intern at
+          <a href="https://aws.amazon.com/ebs/" target="_blank"
+            >Amazon Web Services</a
+          >
+          — Elastic Block Store.</i
+        >
+        <br />
+        Designed and implemented a conditional distributed rate-limiting
+        strategy, enabling select clients to burst usage through intelligent
+        caching.
+      </p>
+
+      <p>
+        <i
+          >ML Researcher at
+          <a href="https://umd.edu/" target="_blank">University of Maryland</a>
+          under Dr. Rajeev Barua.</i
+        >
+        <br />
+        Built LLaMa and RAG-based multi-agent system for natural language SQL
+        generation, improving benchmark accuracy by 25% through multi-shot
+        prompting and execution-time validation.
+      </p>
+
+      <span style="margin-top: auto"></span>
+    </main>
+
+    <iframe
+      data-testid="embed-iframe"
+      style="border-radius: 12px; border: 1px solid var(--fg)"
+      src="https://open.spotify.com/embed/track/58nqArQQR9mlhLtHrwYsZL?utm_source=generator&theme=0"
+      width="100%"
+      height="80"
+      frameborder="0"
+      allowfullscreen=""
+      allow="
+        autoplay;
+        clipboard-write;
+        encrypted-media;
+        fullscreen;
+        picture-in-picture;
+      "
+      loading="lazy"
+    ></iframe>
+
+    <p class="text-center">
+      <a href="https://github.com/raghav-misra" target="_blank">Github</a> •
+      <a href="https://www.linkedin.com/in/raghav--misra/" target="_blank"
+        >LinkedIn</a
+      >
+      •
+      <a href="mailto:raghav.m2014@gmail.com" target="_blank">Email</a>
+    </p>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+    <script>
+      document.addEventListener("click", (e) => {
+        if (e.target.closest("a")) {
+          confetti({
+            particleCount: 20,
+            spread: 40,
+            startVelocity: 20,
+            origin: {
+              x: e.clientX / window.innerWidth,
+              y: e.clientY / window.innerHeight,
+            },
+          });
+        }
+      });
+
+      const mainContainer = document.getElementById("main-container");
+      const experiencesContainer = document.getElementById(
+        "experiences-container",
+      );
+      const showExperiencesLink = document.getElementById("show-experiences");
+      const backToMainLink = document.getElementById("back-to-main");
+      const headerRow = document.getElementById("header-row");
+
+      function switchContainer(from, to, showBackLink) {
+        from.classList.add("fade-out");
+        if (showBackLink) {
+          headerRow.classList.add("experiences-active");
+        } else {
+          headerRow.classList.remove("experiences-active");
+        }
+        from.addEventListener(
+          "transitionend",
+          function handler() {
+            from.removeEventListener("transitionend", handler);
+            from.classList.add("hidden");
+            from.classList.remove("fade-out");
+            to.classList.remove("hidden");
+            to.classList.add("fade-out");
+            requestAnimationFrame(() => {
+              requestAnimationFrame(() => {
+                to.classList.remove("fade-out");
+              });
+            });
+          },
+          { once: true },
+        );
+      }
+
+      showExperiencesLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        switchContainer(mainContainer, experiencesContainer, true);
+      });
+
+      backToMainLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        switchContainer(experiencesContainer, mainContainer, false);
+      });
+    </script>
+  </body>
+</html>
