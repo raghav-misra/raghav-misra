@@ -23,7 +23,7 @@
         );
         background-size: 20px 20px;
         color: var(--fg);
-        font-size: 16px;
+        font-size: 18px;
         line-height: 1.75rem;
         height: 100%;
         display: flex;
@@ -181,6 +181,30 @@
           transform: rotate(0deg);
         }
       }
+
+      /* Minimal pill-styled scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: var(--link);
+        border-radius: 10px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--link);
+        opacity: 0.8;
+      }
+
+      * {
+        scrollbar-width: thin;
+        scrollbar-color: var(--link) transparent;
+      }
     </style>
   </head>
 
@@ -239,6 +263,9 @@
         }
       }
       @media (max-width: 500px) {
+        .github-corner {
+          display: none;
+        }
         .github-corner:hover .octo-arm {
           animation: none;
         }
